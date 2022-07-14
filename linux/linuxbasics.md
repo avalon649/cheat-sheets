@@ -152,3 +152,9 @@ npx http.server -p 8888
 ```bash
 %sudo ALL=(ALL) NOPASSWD: ALL
 ```
+
+Clear All Logs
+
+```bash
+truncate -s 0 /var/log/*log
+```
