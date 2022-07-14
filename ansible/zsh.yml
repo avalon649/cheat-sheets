@@ -1,0 +1,10 @@
+---
+- hosts: "*"
+
+  become: yes
+
+  tasks:
+    - name: Install Zsh
+      apt:
+        name: zsh
+        update_cache: yes
