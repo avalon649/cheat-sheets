@@ -85,9 +85,3 @@ Then, using `kubectl` on your kubernetes / rancher host
 ```bash
 kubectl create -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/master/nvidia-device-plugin.yml
 ```
-
-Clear All Logs
-
-```bash
-truncate -s 0 /var/log/*log
-```
