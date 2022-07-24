@@ -158,3 +158,9 @@ Clear All Logs
 ```bash
 truncate -s 0 /var/log/*log
 ```
+
+## Encode Data
+
+```bash
+echo -n 'secret_key' | openssl base64
+```
