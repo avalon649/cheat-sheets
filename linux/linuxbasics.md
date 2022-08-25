@@ -164,3 +164,10 @@ truncate -s 0 /var/log/*log
 ```bash
 echo -n 'secret_key' | openssl base64
 ```
+
+## Linux Unattended-Upgrade
+
+```bash
+sudo dpkg-reconfigure --priority=low unattended-upgrades
+sudo unnattended-upgrade --dry-run -debug
+```
