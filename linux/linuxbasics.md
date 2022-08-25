@@ -171,3 +171,10 @@ echo -n 'secret_key' | openssl base64
 sudo dpkg-reconfigure --priority=low unattended-upgrades
 sudo unnattended-upgrade --dry-run -debug
 ```
+
+## Add User
+
+```bash
+useradd username -m -s /bin/bash -c "comment"
+usermmod -aG sudo,adm,docker username
+passwd username
