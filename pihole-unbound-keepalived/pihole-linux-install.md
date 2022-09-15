@@ -151,3 +151,8 @@ sudo systemctl status keepalived.service
 ```
 
 
+`Gravity-Sync Installation Script`
+
+```bash
+curl -sSL https://gravity.vmstan.com | bash
+```
