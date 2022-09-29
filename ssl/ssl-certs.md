@@ -30,6 +30,9 @@ echo "subjectAltName=DNS:your-dns.record,IP:257.10.10.1" >> extfile.cnf
 ```bash
 # optional
 echo extendedKeyUsage = serverAuth >> extfile.cnf
+
+cat cert.pem > fullchain.pem
+cat ca.pem >> .\fullchain.pem
 ```
 4. Create the certificate
 ```bash
