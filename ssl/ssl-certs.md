@@ -30,15 +30,16 @@ echo "subjectAltName=DNS:your-dns.record,IP:257.10.10.1" >> extfile.cnf
 ```bash
 # optional
 echo extendedKeyUsage = serverAuth >> extfile.cnf
-
-cat cert.pem > fullchain.pem
-cat ca.pem >> .\fullchain.pem
 ```
 4. Create the certificate
 ```bash
 openssl x509 -req -sha256 -days 365 -in cert.csr -CA ca.pem -CAkey ca-key.pem -out cert.pem -extfile extfile.cnf -CAcreateserial
 ```
-
+5. Combine To Fullchain
+```bash
+cat cert.pem > fullchain.pem
+cat ca.pem >> .\fullchain.pem
+```
 ## Certificate Formats
 
 X.509 Certificates exist in Base64 Formats **PEM (.pem, .crt, .ca-bundle)**, **PKCS#7 (.p7b, p7s)** and Binary Formats **DER (.der, .cer)**, **PKCS#12 (.pfx, p12)**.
