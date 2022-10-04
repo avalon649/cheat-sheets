@@ -28,6 +28,8 @@ netplay apply
 
 ```bash
 lsof -i -P -n |grep LISTEN
+
+netstat -ntlp
 ```
 
 ## Launch A Quick Web Server
