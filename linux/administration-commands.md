@@ -80,16 +80,6 @@ apt list --installed | grep (package-name)
 | wc -l
 | less
 ```
-## Launch A Quick Web Server
-
-```bash
-python -m http.server 7777
-
-php -S 127.0.0.1:8888
-
-npx http.server -p 8888
-```
-
 ## Change Sudo to NoPass
 
 `cd /etc/sudoers`
