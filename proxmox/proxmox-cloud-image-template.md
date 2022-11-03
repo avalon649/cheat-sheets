@@ -52,5 +52,5 @@ qm template 8000
 10. Clone template.
 
 ```bash
-qm clone 8000 135 --name yoshi --full
+qm clone 8000 135 --name test-lab --full
 ```
