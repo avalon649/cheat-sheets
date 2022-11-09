@@ -7,11 +7,6 @@ qm resize <vmid> <disk> <size> [OPTIONS]
 
 qm resize 100 virtio0 +5G
 ```
-### Shrink the disk
-
-```bash
-qemu-img resize -f raw vm-100.raw 10G
-```
 
 ### Convert Virtual-Box Image to qcow2
 
@@ -26,6 +21,9 @@ qemu-img convert -f vdi -O qcow2 ubuntu.vdi ubuntu.qcow2
 ### Import an external disk 
 
 ```bash
+Command Syntax
+qm importdisk <vmid> <source> <storage> [OPTIONS]
+
 qm importdisk 105 disk.vmdk local-lvm
 ```
 
