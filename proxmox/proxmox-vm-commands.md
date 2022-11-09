@@ -16,12 +16,20 @@ qm destroy <vmid> [OPTIONS]
 
 qm destroy vmid
 ```
-
-### Attach hardisk to VM
+### Clone VM
 ```bash
 Command Syntax
 
-qm set <vmid> [OPTIONS]
+qm clone <vmid> <newid> [OPTIONS]
 
-qm set 200 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-200-disk-1
+qm clone 100 101 --format vmdk -name 100_vmware_export
+```
+### Start/Stop VM
+
+```bash
+Command Syntax 
+
+qm start/stop <vmid> [OPTIONS]
+
+qm start/stop 100
 ```

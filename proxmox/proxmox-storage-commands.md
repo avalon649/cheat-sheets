@@ -37,3 +37,11 @@ qm set  592  -scsi2 /dev/disk/by-id/ata-ST3000DM001-1CH166_Z1F41BLC
 
 update VM 592: -scsi2 /dev/disk/by-id/ata-ST3000DM001-1CH166_Z1F41BLC
 ```
+### Attach hardisk to VM
+```bash
+Command Syntax
+
+qm set <vmid> [OPTIONS]
+
+qm set 200 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-200-disk-1
+```
