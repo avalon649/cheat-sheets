@@ -16,7 +16,8 @@ qemu-img resize -f raw vm-100.raw 10G
 ### Convert Virtual-Box Image to qcow2
 
 ```bash
-command syntax 
+Command Syntax 
+
 qemu-img [standard options] command [command options]
 
 qemu-img convert -f vdi -O qcow2 ubuntu.vdi ubuntu.qcow2
