@@ -22,6 +22,7 @@ qemu-img convert -f vdi -O qcow2 ubuntu.vdi ubuntu.qcow2
 
 ```bash
 Command Syntax
+
 qm importdisk <vmid> <source> <storage> [OPTIONS]
 
 qm importdisk 105 disk.vmdk local-lvm
