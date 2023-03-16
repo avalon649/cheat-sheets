@@ -1,0 +1,9 @@
+---
+- hosts: k-master
+
+  become: yes
+
+  tasks:
+    - name: shutdown
+      community.general.shutdown:
+      delay: 0

@@ -1,0 +1,15 @@
+Host proxmox
+  Hostname 192.168.50.100
+  Port 22
+  User root
+
+Host pihole
+  Hostname 192.168.50.53
+  Port 22
+  User admin
+
+Host proxy-server
+  Hostname 192.168.50.20
+  Port 22
+  User admin
+
