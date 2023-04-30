@@ -55,3 +55,7 @@ Short Name | Long Name
 ```bash
 source <(kubectl completion zsh)
 ```
+### Relabel Role Name
+```
+kubectl label --overwrite nodes <your_node> kubernetes.io/role=<your_new_label>
+```
