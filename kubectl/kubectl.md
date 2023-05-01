@@ -69,7 +69,7 @@ kubect explain <resource> --recursive
 kubectl --namespace <namespace-name> run <pod-name> --image=alpine --restart=Never --rm --stdin --tty -- sh
 ``` 
 
-###Kustomize
+### Kustomize
 
 ```bash
 kustomize build nginx | kubectl apply -f -
