@@ -60,7 +60,7 @@ source <(kubectl completion zsh)
 kubectl label --overwrite nodes <your_node> kubernetes.io/role=<your_new_label>
 ```
 
-### Explain Kubernetes Resource Template
+### Describe Kubernetes Resource
 ```bash
 kubect explain <resource> --recursive
 ```
