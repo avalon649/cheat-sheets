@@ -61,6 +61,6 @@ kubectl label --overwrite nodes <your_node> kubernetes.io/role=<your_new_label>
 ```
 
 ### Explain Kubernetes Resource Template
-``bash
+```bash
 kubect explain <resource> --recursive
 ```
