@@ -64,3 +64,7 @@ kubectl label --overwrite nodes <your_node> kubernetes.io/role=<your_new_label>
 ```bash
 kubect explain <resource> --recursive
 ```
+### Run an Interactive Pod
+```bash
+kubectl --namespace <namespace-name> run <pod-name> --image=alpine --restart=Never --rm --stdin --tty -- sh
+``` 
