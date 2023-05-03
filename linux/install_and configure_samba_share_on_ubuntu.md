@@ -18,14 +18,15 @@ Samba has its own user management system. However, any user existing on the samb
 
 ```bash
     sudo smbpasswd -a linuxconfig
-    New SMB password:
-    Retype new SMB password:
-    Added user linuxconfig.
 ```
+
+New SMB password:
+Retype new SMB password:
+Added user linuxconfig.
 
 Next step is to add the home directory share. Use your favourite text editor, ex. atom, sublime, to edit our new /etc/samba/smb.conf Aamba configuration file and add the following lines to the end of the file:
 
-```bash
+```config
     [homes]
        comment = Home Directories
        browseable = yes
@@ -44,7 +45,7 @@ Optionally, add a new publicly available read-write Samba share accessible by an
 
 Once ready, once again open the /etc/samba/smb.conf samba configuration file and add the following lines to the end of the file:
 
-```bash
+```config
     [public]
       comment = public anonymous access
       path = /var/samba/
