@@ -58,6 +58,7 @@ COMMAND | DESCRIPTION
 `docker export CONTAINER` | Export the content of the container (tar archive)
 `docker exec CONTAINER` | Run a command inside a container
 `docker exec -it CONTAINER /bin/bash` | Open an interactive shell inside a container
+`docker exec -it --user 0 CONTAINER /bin/bash` | Open an interactive shell inside a container as root
 `docker wait CONTAINER` | Wait until the container terminates and return the exit code
 
 ## Images
