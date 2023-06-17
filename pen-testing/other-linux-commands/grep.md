@@ -1,0 +1,3 @@
+```bash
+grep . file.txt#
+```
