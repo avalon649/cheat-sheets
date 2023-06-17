@@ -1,3 +1,0 @@
-```bash
-export variablename=value
-```

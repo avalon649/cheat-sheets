@@ -1,3 +1,0 @@
-```bash
-smbclient '\\$ip\anonymous'
-```
