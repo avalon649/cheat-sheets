@@ -74,3 +74,9 @@ kubectl --namespace <namespace-name> run <pod-name> --image=alpine --restart=Nev
 ```bash
 kustomize build nginx | kubectl apply -f -
 ```
+
+### Decode a secret
+
+```bash
+kubectl get secret secret-name -o jsonpath='{.data.value}' | base64 --decode
+```
