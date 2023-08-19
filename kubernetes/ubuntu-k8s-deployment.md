@@ -133,3 +133,9 @@ kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisione
 ```bash
 kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
+
+### Failed Scheduling Fix
+
+```bash
+kubectl taint nodes --all kubernetes.io/hostname=<kubernetes hostname>
+```
