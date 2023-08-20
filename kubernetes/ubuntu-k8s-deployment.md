@@ -137,5 +137,5 @@ kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storagec
 ### Failed Scheduling Fix
 
 ```bash
-kubectl taint nodes --all kubernetes.io/hostname=<kubernetes hostname>
+kubectl taint nodes --all node-role.kubernetes.io/control-plane-
 ```
