@@ -80,3 +80,15 @@ kustomize build nginx | kubectl apply -f -
 ```bash
 kubectl get secret secret-name -o jsonpath='{.data.value}' | base64 --decode
 ```
+
+### Label namespace 
+
+```bash
+kubectl label namespace default istio-injection=enabled
+```
+
+### Show namespace label
+
+```bash
+kubectl get namespace default --show-label
+```
