@@ -96,7 +96,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 ### Initialize Kubernetes Cluster with Kubeadm
 
 ```bash
-sudo kubeadm init --control-plane-endpoint=k8smaster.example.net
+sudo kubeadm init --apiserver-advertise-address 192.168.0.2 --apiserver-cert-extra-sans 192.168.0.2 --control-plane-endpoint=k8smaster.example.net
 ```
 
 #### After the initialization is complete, you will see a message with instructions on how to join worker nodes to the cluster. Make a note of the kubeadm join command for future reference.
