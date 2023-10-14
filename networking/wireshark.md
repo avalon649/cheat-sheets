@@ -14,49 +14,70 @@ Length	| Length of the frame in bytes
 
 Operator | Description | Example
 ---|---|---
-and or && |Logical AND | All the conditions should match 
-or or || | Logical OR | Either all or one of the conditions should match
-xor or ^^ |	Logical XOR	| Exclusive alterations - only one of the two conditions should match not both 
-not or !	Not (Negation)	Not equal to 
-[ n ] [ … ]	Substring operator	Filter a specific word or text 
-Filtering Packets (Display Filters)
-Operator	Description	Example
-eq or ==	Equal	ip.dest  ==  192.168.1.1
-ne or !=	Not equal	ip.dest  !=   192.168.1.1
-gt or >	Greater than	frame.len   >   10
-it or <	less than	frame.len  <   10
-ge or >=	Greater than or equal	frame.len  >=   10
-le or <=	Less than or equal	frame.len  <=   10
-Filter Types
-Name	 Description
-Capture filter	Filter packets during capture
-Display filter	Hide packets from a capture display
-Wireshark Capturing Modes
-Name	Description
-Promiscuous mode	Sets interface to capture all packets on a network segment to which it is associated to
-Monitor mode	Setup the wireless interface to capture all traffic it can receive (Unix/ Linux only)
-Miscellaneous
-Name	Description
-Slice Operator	[ … ] - Range of values
-Membership Operator	{} - In
-CTRL+E	Start/Stop Capturing
-Capture Filter Syntax
-Syntax	Protocol	Direction	Hosts	Value	Logical Operator	Expressions
-Example	tcp	src	192.168.1.1	80	and	tcp dst 202.164.30.1
-Display Filter Syntax
-Syntax	Protocol	String 1	String 2	Comparison Operator	Value	Logical Operator	Expressions
-Example	http	dest	ip	==	192.168.1.1	and	tcp port
-Keyboard Shortcuts - Main Display Window
-Accelerator	Description	Accelerator	Description
-Tab or Shift+Tab	Move between screen elements, e.g. from the toolbars to the packet list to the packet detail.	Alt+→ or Option→	Move to the next packet in the selection history.
-↓	Move to the next packet or detail item.	→	In the packet detail, opens the selected tree item.
-↑ 	Move to the previous packet or detail item.	Shift+→	In the packet detail, opens the selected tree items and all of its subtrees.
-Ctrl+ ↓ or F8 	Move to the next packet, even if the packet list isn't focused.	Ctrl+→	In the packet detail, opens all tree items.
-Ctrl+ ↑ Or F7	Move to the previous packet, even if the packet list isn't focused	Ctrl+←	In the packet detail, closes all the tree
-Ctrl+.	Move to the next packet of the conversation (TCP, UDP or IP).	Backspace	In the packet detail, jumps to the parent node.
-Ctrl+,	Move to the previous packet of the conversation (TCP, UDP or IP).	Return or Enter	In the packet detail, toggles the selected tree item.
+and or && | Logical AND | All the conditions should match 
+or or \|\| | Logical OR | Either all or one of the conditions should match
+xor or ^^ | Logical XOR	| Exclusive alterations - only one of the two conditions should match not both 
+not or ! | Not (Negation) | Not equal to 
+[ n ] [ … ]	| Substring operator | Filter a specific word or text 
 
-Protocols - Values
+### Filtering Packets (Display Filters)
+
+Operator | Description | Example
+---|---|---
+eq or == | Equal | ip.dest  ==  192.168.1.1
+ne or != | Not equal | ip.dest  !=   192.168.1.1
+gt or > | Greater than | frame.len  >   10
+it or < | less than	| frame.len  <   10
+ge or >= | Greater than or equal | frame.len  >=   10
+le or <= | Less than or equal | frame.len <=   10
+
+### Filter Types
+
+Name | Description
+---|---
+Capture filter | Filter packets during capture
+Display filter | Hide packets from a capture display
+
+### Wireshark Capturing Modes
+
+Name | Description
+---|---
+Promiscuous mode | Sets interface to capture all packets on a network segment to which it is associated to
+Monitor mode | Setup the wireless interface to capture all traffic it can receive (Unix/ Linux only)
+
+### Miscellaneous
+
+Name | Description
+---|---
+Slice Operator | [ … ] - Range of values
+Membership Operator | {} - In
+CTRL+E | Start/Stop Capturing
+
+### Capture Filter Syntax
+
+Syntax | Protocol | Direction | Hosts | Value | Logical Operator |Expressions
+---|---|---|---|---|---|---
+Example | tcp | src | 192.168.1.1 | 80 | and | tcp dst 202.164.30.1
+
+### Display Filter Syntax
+
+Syntax | Protocol | String 1 | String 2 | Comparison Operator | Value | Logical Operator | Expressions
+---|---|---|---|---|---|---|---
+Example | http | dest | ip | == | 192.168.1.1 | and | tcp port
+
+### Keyboard Shortcuts - Main Display Window
+
+Accelerator | Description | Accelerator | Description
+---|---|---|---
+Tab or Shift+Tab | Move between screen elements, e.g. from the toolbars to the packet list to the packet detail. | Alt+→ or Option→ |Move to the next packet in the selection history.
+↓ | Move to the next packet or detail item. | → | In the packet detail, opens the selected tree item.
+↑ | Move to the previous packet or detail item. | Shift+→ | In the packet detail, opens the selected tree items and all of its subtrees.
+Ctrl+ ↓ or F8 | Move to the next packet, even if the packet list isn't focused. | Ctrl+→ | In the packet detail, opens all tree items.
+Ctrl+ ↑ Or F7 | Move to the previous packet, even if the packet list isn't focused | Ctrl+← | In the packet detail, closes all the tree
+Ctrl+. | Move to the next packet of the conversation (TCP, UDP or IP). | Backspace |In the packet detail, jumps to the parent node.
+Ctrl+, | Move to the previous packet of the conversation (TCP, UDP or IP). | Return or Enter | In the packet detail, toggles the selected tree item.
+
+### Protocols - Values
 
 `ether,  fddi,  ip,  arp,  rarp,  decnet,  lat, sca,  moprc,  mopdl,  tcp  and  udp`
 
