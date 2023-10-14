@@ -93,6 +93,7 @@ Filter by Multiple Ips | ip.addr == 10.10.50.1 and ip.addr == 10.10.50.100
 Filter out IP address | ! (ip.addr == 10.10.50.1)
 Filter subnet | ip.addr == 10.10.50.1/24
 Filter by port | tcp.port == 25
+Filter by port (memebership operator) |  tcp port in {80,443,8000..8005}
 Filter by destination port | tcp.dstport == 23
 Filter by ip address and port | ip.addr == 10.10.50.1 and Tcp.port == 25
 Filter by URL | http.host == "host name"
@@ -104,3 +105,4 @@ Wireshark multicast filter | (eth.dst[0] & 1)
 Host name filter | ip.host = hostname
 MAC address filter | eth.addr == 00:70:f4:23:18:c4
 RST flag filter | tcp.flag.reset == 1
+Regex filter | ip matches "example"
