@@ -23,6 +23,7 @@
     tcpdump port 80 Filter traffic based on a port
     tcpdump portrange 21-125 Filter based on port range
     tcpdump IPV6 Show only IPV6 packets
+    tcpdump -nXxei 
 ```
 
 ### Advanced Logical Operators in Tcpdump
