@@ -1,4 +1,4 @@
-```
+```bash
 
 # Usage: terraform [global options] <subcommand> [args]
 
