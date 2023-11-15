@@ -1,6 +1,8 @@
 ### Sudo Without Password 
 
-`cd /etc/sudoers`
+```bash
+cd /etc/sudoers`
+```
 
 ```bash
 # Allow members of group sudo to execute any command
