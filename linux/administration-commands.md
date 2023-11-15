@@ -1,10 +1,5 @@
 # Linux Basics
 
-## Find File or Folder
-
-```bash
-find / -name filenamme 2>/dev/null
-```
 
 ## Generate Basics Auth Password
 
