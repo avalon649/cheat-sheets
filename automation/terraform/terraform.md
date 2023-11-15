@@ -1,84 +1,89 @@
-```bash
+```
 
 # Usage: terraform [global options] <subcommand> [args]
 
-Main commands:
+# Main commands:
+
+# Prepare your working directory for other commands
   init          
-  # Prepare your working directory for other commands
-  
+
+# Check whether the configuration is valid
   validate      
-  # Check whether the configuration is valid
-  
+
+ # Show changes required by the current configuration 
   plan          
-  # Show changes required by the current configuration
   
+# Create or update infrastructure  
   apply --auto-approve        
-  # Create or update infrastructure
   
+  # Destroy previously-created infrastructure  
   destroy       
-  # Destroy previously-created infrastructure
+
 
 # All other commands:
+
+# Try Terraform expressions at an interactive command prompt  
   console       
-  # Try Terraform expressions at an interactive command prompt
-  
+
+# Reformat your configuration in the standard style  
   fmt           
-  # Reformat your configuration in the standard style
   
+# Release a stuck lock on the current workspace  
   force-unlock  
-  # Release a stuck lock on the current workspace
   
+# Install or upgrade remote Terraform modules  
   get           
-  # Install or upgrade remote Terraform modules
   
+# Generate a Graphviz graph of the steps in an operation  
   graph         
-  # Generate a Graphviz graph of the steps in an operation
   
+# Associate existing infrastructure with a Terraform resource  
   import        
-  # Associate existing infrastructure with a Terraform resource
   
+# Obtain and save credentials for a remote host  
   login         
-  # Obtain and save credentials for a remote host
   
+# Remove locally-stored credentials for a remote host  
   logout        
-  # Remove locally-stored credentials for a remote host
   
+# Metadata related commands  
   metadata      
-  # Metadata related commands
   
+# Show output values from your root module  
   output        
-  # Show output values from your root module
   
+ # Show the providers required for this configuration 
   providers     
-  # Show the providers required for this configuration
   
+# Update the state to match remote systems  
   refresh       
-  # Update the state to match remote systems
   
+# Show the current state or a saved plan  
   show          
-  # Show the current state or a saved plan
   
+# Advanced state management  
   state         
-  # Advanced state management
   
+# Mark a resource instance as not fully functional  
   taint         
-  # Mark a resource instance as not fully functional
   
+# Execute integration tests for Terraform modules  
   test          
-  # Execute integration tests for Terraform modules
   
+# Remove the 'tainted' state from a resource instance  
   untaint       
-  # Remove the 'tainted' state from a resource instance
   
+# Show the current Terraform version  
   version       
-  # Show the current Terraform version
   
+# Workspace management  
   workspace     
-  # Workspace management
+  
 
 # Global options (use these before the subcommand, if any):
+
+# Switch to a different working directory before executing the
+# given subcommand. 
   
   -chdir=DIR    
-  # Switch to a different working directory before executing the
-  # given subcommand.
 ```
