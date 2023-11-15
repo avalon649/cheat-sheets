@@ -1,7 +1,7 @@
 ### Sudo Without Password 
 
 ```bash
-cd /etc/sudoers`
+cd /etc/sudoers
 ```
 
 ```bash
