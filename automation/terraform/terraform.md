@@ -1,4 +1,4 @@
-```bash
+```shell
 
 # Usage: terraform [global options] <subcommand> [args]
 
@@ -14,7 +14,7 @@
   plan          
   
 # Create or update infrastructure  
-  apply --auto-approve        
+  apply `--auto-approve`     
   
   # Destroy previously-created infrastructure  
   destroy       
@@ -44,7 +44,7 @@
   login         
   
 # Remove locally-stored credentials for a remote host  
-  logout        
+ `logout`        
   
 # Metadata related commands  
   metadata      
