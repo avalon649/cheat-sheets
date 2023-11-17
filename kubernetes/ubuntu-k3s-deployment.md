@@ -11,6 +11,10 @@ https://k3s.io
 curl -sfL https://get.k3s.io | sh -s - --disable traefik --disable=servicelb --write-kubeconfig-mode 644 --node-name K3S-Server --bind-address 10.0.21.130 --kube-controller-manager-arg bind-address=0.0.0.0 --kube-proxy-arg metrics-bind-address=0.0.0.0 --kube-scheduler-arg bind-address=0.0.0.0 --etcd-expose-metrics true --kubelet-arg containerd=/run/k3s/containerd/containerd.sock
 ```
 
+```bash
+--tls-san lb-ip
+```
+
 ### Install Worker
 
 Grab token from the master node to be able to add worked nodes to it: 
