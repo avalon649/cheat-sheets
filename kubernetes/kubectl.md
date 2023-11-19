@@ -93,6 +93,8 @@ kubectl label namespace default istio-injection=enabled
 kubectl get namespace default --show-label
 ```
 
+### Deploy manifest from terminal
+
 ```bash
 cat <<EOF | kubectl apply -f -
 ```
