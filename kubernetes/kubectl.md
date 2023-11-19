@@ -92,3 +92,7 @@ kubectl label namespace default istio-injection=enabled
 ```bash
 kubectl get namespace default --show-label
 ```
+
+```bash
+cat <<EOF | kubectl apply -f -
+```
