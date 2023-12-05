@@ -4,8 +4,9 @@
 apt-get update
 apt-get upgrade
 
-apt-get install qemu-guest-agent 
-apt-get install build-essential 
+sudo apt-get install qemu-guest-agent # this is optional if you are virtualizing this machine
+
+sudo apt-get install build-essential # build-essential is required for nvidia drivers to compile
 ```
 
 ```bash
