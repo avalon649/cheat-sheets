@@ -30,7 +30,7 @@ echo "blacklist nvidia" >> /etc/modprobe.d/blacklist.conf
 ```
 
 ```bash
-echo "/etc/modprobe.d/kvm-amd.conf" >> /etc/modprobe.d/kvm-amd.conf
+echo "options kvm-amd nested=1" >> /etc/modprobe.d/kvm-amd.conf
 ```
 ## Add these parameters to modules 
 
