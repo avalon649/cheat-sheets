@@ -18,9 +18,9 @@ update-grub
 
 
 ```bash
-echo "blacklist nouveau" >> /etc/modprobe.d/pve-blacklist.conf
-echo "blacklist nvidia" >> /etc/modprobe.d/pve-blacklist.conf
-echo "blacklist radeon" >> /etc/modprobe.d/pve-blacklist.conf
+# echo "blacklist nouveau" >> /etc/modprobe.d/pve-blacklist.conf
+# echo "blacklist nvidia" >> /etc/modprobe.d/pve-blacklist.conf
+# echo "blacklist radeon" >> /etc/modprobe.d/pve-blacklist.conf
 echo "blacklist nvidiafb" >> /etc/modprobe.d/pve-blacklist.conf
 ```
 
