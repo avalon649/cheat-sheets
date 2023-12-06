@@ -23,7 +23,15 @@ update-grub
 # echo "blacklist radeon" >> /etc/modprobe.d/pve-blacklist.conf
 echo "blacklist nvidiafb" >> /etc/modprobe.d/pve-blacklist.conf
 ```
+```bash
+echo "blacklist radeon" >> /etc/modprobe.d/blacklist.conf
+echo "blacklist nouveau" >> /etc/modprobe.d/blacklist.conf
+echo "blacklist nvidia" >> /etc/modprobe.d/blacklist.conf
+```
 
+```bash
+echo "/etc/modprobe.d/kvm-amd.conf" >> /etc/modprobe.d/kvm-amd.conf
+```
 ## Add these parameters to modules 
 
 
@@ -32,6 +40,7 @@ echo vfio >> /etc/modules
 echo vfio_iommu_type1 >> /etc/modules
 echo vfio_pci >> /etc/modules
 echo vfio_virqfd >> /etc/modules
+echo options vfio-pci ids=110de:1c31,10de:10f1  disable_vga=1
 ```
 When that is done run a:
 
