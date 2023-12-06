@@ -32,15 +32,19 @@ echo "blacklist nvidia" >> /etc/modprobe.d/blacklist.conf
 ```bash
 echo "options kvm-amd nested=1" >> /etc/modprobe.d/kvm-amd.conf
 ```
+
+```bash
+echo "options vfio-pci ids=110de:1c31,10de:10f1  disable_vga=1" >> /etc/modprobe.d/vfio.conf
+```
+
 ## Add these parameters to modules 
 
 
 ```bash
-echo vfio >> /etc/modules
-echo vfio_iommu_type1 >> /etc/modules
-echo vfio_pci >> /etc/modules
-echo vfio_virqfd >> /etc/modules
-echo options vfio-pci ids=110de:1c31,10de:10f1  disable_vga=1
+echo "vfio" >> /etc/modules
+echo "vfio_iommu_type1" >> /etc/modules
+echo "vfio_pci" >> /etc/modules
+echo "vfio_virqfd" >> /etc/modules
 ```
 When that is done run a:
 
