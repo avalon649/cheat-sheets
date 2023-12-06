@@ -4,7 +4,7 @@
 
 `datacenter - storage`
 
-* On Proxmox Termnal
+* On Proxmox Terminal
 
 ```bash
 lvremove /dev/pve/data
