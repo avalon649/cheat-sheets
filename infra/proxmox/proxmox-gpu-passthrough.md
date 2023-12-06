@@ -46,31 +46,30 @@ Once that is done, we’re going to find the PCI ID’s of the NVidia GPU we wan
 ```bash
 lspci -v
 ```
-```bash
-08:00.0 VGA compatible controller: NVIDIA Corporation GP106 [GeForce GTX 1060] (rev a1) (prog-if 00 [VGA controller])
-        Subsystem: Gigabyte Technology Co., Ltd GP106 [GeForce GTX 1060]
-        Flags: fast devsel, IRQ 354
-        Memory at f6000000 (32-bit, non-prefetchable) [size=16M]
+```
+01:00.0 VGA compatible controller: NVIDIA Corporation GP106GL [Quadro P2200] (rev a1) (prog-if 00 [VGA controller])
+        Subsystem: NVIDIA Corporation GP106GL [Quadro P2200]
+        Flags: bus master, fast devsel, latency 0, IRQ 282, IOMMU group 12
+        Memory at e0000000 (32-bit, non-prefetchable) [size=16M]
         Memory at c0000000 (64-bit, prefetchable) [size=256M]
         Memory at d0000000 (64-bit, prefetchable) [size=32M]
-        I/O ports at e000 [size=128]
-        Expansion ROM at 000c0000 [disabled] [size=128K]
+        I/O ports at 3000 [size=128]
+        Expansion ROM at e1000000 [disabled] [size=512K]
         Capabilities: [60] Power Management version 3
-        Capabilities: [68] MSI: Enable- Count=1/1 Maskable- 64bit+
+        Capabilities: [68] MSI: Enable+ Count=1/1 Maskable- 64bit+
         Capabilities: [78] Express Legacy Endpoint, MSI 00
         Capabilities: [100] Virtual Channel
-        Capabilities: [250] Latency Tolerance Reporting
         Capabilities: [128] Power Budgeting <?>
         Capabilities: [420] Advanced Error Reporting
         Capabilities: [600] Vendor Specific Information: ID=0001 Rev=1 Len=024 <?>
-        Capabilities: [900] #19
+        Capabilities: [900] Secondary PCI Express
         Kernel driver in use: vfio-pci
         Kernel modules: nvidiafb, nouveau
 
-08:00.1 Audio device: NVIDIA Corporation Device 0fb9 (rev a1)
-        Subsystem: Gigabyte Technology Co., Ltd Device 3747
-        Flags: fast devsel, IRQ 355
-        Memory at f7080000 (32-bit, non-prefetchable) [size=16K]
+01:00.1 Audio device: NVIDIA Corporation GP106 High Definition Audio Controller (rev a1)
+        Subsystem: NVIDIA Corporation GP106 High Definition Audio Controller
+        Flags: bus master, fast devsel, latency 0, IRQ 281, IOMMU group 12
+        Memory at e1080000 (32-bit, non-prefetchable) [size=16K]
         Capabilities: [60] Power Management version 3
         Capabilities: [68] MSI: Enable- Count=1/1 Maskable- 64bit+
         Capabilities: [78] Express Endpoint, MSI 00
