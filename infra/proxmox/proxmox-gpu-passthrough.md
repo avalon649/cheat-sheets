@@ -80,12 +80,12 @@ lspci -v
 You will get similar output, find your GPU
 Run:
 ```bash
-lspci -n -s 08:00
+lspci -n -s 01:00
 ```
 You will see something like this
 ```bash
-08:00.0 0300: 10de:1c81 (rev a1)
-08:00.1 0403: 10de:0fb9 (rev a1)
+01:00.0 0300: 10de:1c31 (rev a1)
+01:00.1 0403: 10de:10f1 (rev a1)
 ```
 Now execute this: 
 ```bash
