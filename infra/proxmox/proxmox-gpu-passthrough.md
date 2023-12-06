@@ -90,7 +90,7 @@ You will see something like this
 ```
 Now execute this: 
 ```bash
-echo options vfio-pci ids=10de:1c81,10de:0fb9 disable_vga=1 > /etc/modprobe.d/vfio.conf
+echo options vfio-pci ids=110de:1c31,10de:10f1 > /etc/modprobe.d/vfio.conf
 ```
 Reboot system and now check with command ```bash  lspci -v ``` that Nvidia card is now using vfio-pci instead of Nvidia driver
 
