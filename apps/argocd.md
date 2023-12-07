@@ -48,6 +48,15 @@ spec:
 Edit the `--insecure` flag in the `argocd-server` command of the argocd-server deployment, or simply set `server.insecure: "true"` in the `argocd-cmd-params-cm` ConfigMap.
 
 ---
+
+```
+      - args:
+        - /usr/local/bin/argocd-server
+        - --insecure
+        env:
+        - name: ARGOCD_SERVER_INSECURE
+```
+
 ## Get the admin password
 
 For Argo CD v1.8 and earlier, the initial password is set to the name of the server pod, for Argo CD v1.9 and later, the initial password is available from a secret named `argocd-initial-admin-secret`.
