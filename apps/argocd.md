@@ -46,9 +46,6 @@ spec:
 3. Disable internal TLS
 
 Edit the `--insecure` flag in the `argocd-server` command of the argocd-server deployment, or simply set `server.insecure: "true"` in the `argocd-cmd-params-cm` ConfigMap.
-
----
-
 ```
       - args:
         - /usr/local/bin/argocd-server
@@ -56,6 +53,7 @@ Edit the `--insecure` flag in the `argocd-server` command of the argocd-serv
         env:
         - name: ARGOCD_SERVER_INSECURE
 ```
+---
 
 ## Get the admin password
 
