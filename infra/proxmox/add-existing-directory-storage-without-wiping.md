@@ -1,19 +1,5 @@
 ### Add existing directory storage to proxmox without wiping it first
 
-I wanted to blog about this because I couldn't find any info about it on the internet.
-
-Against the advice of everyone, I installed Proxmox on a USB thumbdrive. And, as predicted by everyone who gave that advice, the thumbdrive failed after a couple months.
-
-So I rebuilt my server with a new 1TB SSD disk and a backup of /etc/pve, but my (Directory) storage wasn't appearing. Most blogs suggested editing fstab but my previous config didn't have the target disks in fstab, so I knew that wasn't the solution I was looking for. Turns out, Proxmox uses systemd to mount Directory storage.
-
-Here's the path I took based on a number of helpful forum posts and blogs.
-
-    Take a look around the disks using lsblk
-    Got more details after my initial orientation
-    Added the mounts to systemd
-    Enabled the mounts in systemd
-    Party when it works
-
 So first, I started with getting idea of what the current disk setup looks like with `lsblk.`
 
 ```
@@ -65,8 +51,6 @@ nvme0n1p1        ext4        1.0            4106806e-0ec1-49a4-85e8-dc2337a04086
 
 
 Now that I've got the UUID I need, I created a mount file in ```/etc/systemd/system```
-
-    Note: this process could probably be simplified using something like pvesm add dir ssd -path /mnt/pve/ssd --is_mountpoint yes but I don't have extra disks to test.
 
 ```
 Mount up!
