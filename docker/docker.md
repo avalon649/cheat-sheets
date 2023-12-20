@@ -97,3 +97,9 @@ Restore the volume with a tarball archive.
 ## Troubleshooting
 ### Networking
 `docker run --name netshoot --rm -it nicolaka/netshoot /bin/bash`
+
+### Docker Stop and Remove all Containers in One Command
+
+```bash
+docker ps -aq | xargs docker stop | xargs docker rm
+```
