@@ -99,6 +99,8 @@ Filter by ip address and port | ip.addr == 10.10.50.1 and Tcp.port == 25
 Filter by URL | http.host == "host name"
 Filter by time stamp | frame.time >= "June 02, 2019 18:04:00"
 Filter SYN flag | Tcp.flags.syn == 1 and tcp.flags.ack ==0
+Filter by String (case sensitive) | frame contains "example"
+Filter by String (case inrelative) | frame matches "example"
 Wireshark Beacon Filter | wlan.fc.type_subtype = 0x08
 Wireshark broadcast filter | eth.dst == ff:ff:ff:ff:ff:ff
 Wireshark multicast filter | (eth.dst[0] & 1)
