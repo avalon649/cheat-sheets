@@ -165,6 +165,7 @@ tsig-keygen -a hmac-sha256
 To add the TSIG key to the zone configuration, the "key" statement must be added to the "allow-update" statement in the named.conf file. For example:
 
 ```
+
 zone "example.com" {
     type master;
     file "example.com.zone";
