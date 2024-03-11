@@ -98,3 +98,7 @@ kubectl get namespace default --show-label
 ```bash
 cat <<EOF | kubectl apply -f -
 ```
+
+```bash
+kubectl exec --stdin --tty semaphore-67fb96f6bb-4xfxx -- /bin/sh
+```
