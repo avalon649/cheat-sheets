@@ -1,6 +1,6 @@
 ### Install and Configure NFS Server on Ubuntu:
 
-Source `chatgpt`
+Open a command line terminal and install NFS server.
 
 ```bash
 sudo apt-get update
