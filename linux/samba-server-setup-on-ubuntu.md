@@ -1,59 +1,58 @@
 ### How to configure Samba Server share on Ubuntu 22.04
 
-Open a command line terminal and install Samba server.
+### Open a command line terminal and install Samba server.
 
 ```bash
      sudo apt update
      sudo apt-get install samba-server
 ```
 
-We will be starting with a fresh clean configuration file, while we also keep the default config file as a backup for reference purposes. Execute the following Linux commands to make a copy of the existing configuration file and create a new /etc/samba/smb.conf configuration file:
+### Setting up Samba
+
+Now that Samba is installed, we need to create a directory for it to share:
 
 ```bash
-     sudo cp /etc/samba/smb.conf /etc/samba/smb.conf_backup
-     sudo bash -c 'grep -v -E "^#|^;" /etc/samba/smb.conf_backup | grep . > /etc/samba/smb.conf'
+mkdir /home/<username>/sambashare/
 ```
 
-Samba has its own user management system. However, any user existing on the samba user list must also exist within the /etc/passwd file. If your system user does not exist yet, hence cannot be located within /etc/passwd file, first create a new user using the useradd command before creating any new Samba user. Once your new system user eg. linuxconfig exits, use the smbpasswd command to create a new Samba user:
+The command above creates a new folder sambashare in our home directory which we will share later.
+
+The configuration file for Samba is located at /etc/samba/smb.conf. To add the new directory as a share, we edit the file by running:
 
 ```bash
-    sudo smbpasswd -a linuxconfig
+cp /etc/samba/smb.conf /etc /samba/smb.conf.bak
+sudo nano /etc/samba/smb.conf
 ```
 
-New SMB password:
-Retype new SMB password:
-Added user linuxconfig.
-
-Next step is to add the home directory share. Use your favourite text editor, ex. atom, sublime, to edit our new /etc/samba/smb.conf Aamba configuration file and add the following lines to the end of the file:
-
-```config
-    [homes]
-       comment = Home Directories
-       browseable = yes
-       read only = no
-       create mask = 0700
-       directory mask = 0700
-       valid users = %S
-```
-
-Optionally, add a new publicly available read-write Samba share accessible by anonymous/guest users. First, create a directory you wish to share and change its access permission:
+At the bottom of the file, add the following lines:
 
 ```bash
-     sudo mkdir /var/samba
-     sudo chmod 777 /var/samba/
+[sambashare]
+    comment = Samba on Ubuntu
+    path = /home/username/sambashare
+    read only = no
+    browsable = yes
 ```
 
-Once ready, once again open the /etc/samba/smb.conf samba configuration file and add the following lines to the end of the file:
+Then press Ctrl-O to save and Ctrl-X to exit from the nano text editor.
+What we’ve just added
 
-```config
-    [public]
-      comment = public anonymous access
-      path = /var/samba/
-      browsable =yes
-      create mask = 0660
-      directory mask = 0771
-      writable = yes
-      guest ok = yes
+Now that we have our new share configured, save it and restart Samba for it to take effect:
+
+```bash
+sudo service smbd restart
 ```
 
-Check your current configuration. Your /etc/samba/smb.conf samba configuration file should at this stage look similar to the one below:
+Update the firewall rules to allow Samba traffic:
+
+```bash
+sudo ufw allow samba
+```
+
+### Setting up User Accounts and Connecting to Share
+
+Since Samba doesn’t use the system account password, we need to set up a Samba password for our user account:
+
+```bash
+sudo smbpasswd -a username
+```
