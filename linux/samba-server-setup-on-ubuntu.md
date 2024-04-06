@@ -1,13 +1,13 @@
 ### How to configure Samba Server share on Ubuntu 22.04
 
-1. `Open a command line terminal and install Samba server.`
+ ### Open a command line terminal and install Samba server.
 
           ```bash
                sudo apt update
                sudo apt-get install samba-server
           ```
 
-2. `Setting up Samba`
+ ### Setting up Samba
 
      Now that Samba is installed, we need to create a directory for it to share:
 
@@ -49,7 +49,7 @@
           sudo ufw allow samba
           ```
 
-3. `Setting up User Accounts and Connecting to Share`
+### Setting up User Accounts and Connecting to Share
 
      Since Samba doesn’t use the system account password, we need to set up a Samba password for our user account:
 
