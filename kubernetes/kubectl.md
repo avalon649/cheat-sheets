@@ -98,3 +98,9 @@ kubectl get namespace default --show-label
 ```bash
 cat <<EOF | kubectl apply -f -
 ```
+
+### Ececute in pod with stdin
+
+```bash
+kubectl exec --stdin --tty mypod -- /bin/sh
+```
