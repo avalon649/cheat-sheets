@@ -29,122 +29,26 @@ Characters
 | `\\d` | `.NET, Python 3: one Unicode digit in any script` | `file\_\\d\\d` | `file_9੩` |
 | `\\w` | `Most engines: "word character": ASCII letter, digit or underscore` | `\\w-\\w\\w\\w` | `A-b\_1` |
 | `\\w` | `.Python 3: "word character": Unicode letter, ideogram, digit, or underscore` | `\\w-\\w\\w\\w` | `字-ま\_۳` |
-
-\\w
-
-.NET: "word character": Unicode letter, ideogram, digit, or connector
-
-\\w-\\w\\w\\w
-
-字-ま‿۳
-
-\\s
-
-Most engines: "whitespace character": space, tab, newline, carriage return, vertical tab
-
-a\\sb\\sc
-
-a b  
-c
-
-\\s
-
-.NET, Python 3, JavaScript: "whitespace character": any Unicode separator
-
-a\\sb\\sc
-
-a b  
-c
-
-\\D
-
-One character that is not a _digit_ as defined by your engine's _\\d_
-
-\\D\\D\\D
-
-ABC
-
-\\W
-
-One character that is not a _word character_ as defined by your engine's _\\w_
-
-\\W\\W\\W\\W\\W
-
-\*-+=)
-
-\\S
-
-One character that is not a _whitespace character_ as defined by your engine's _\\s_
-
-\\S\\S\\S\\S
-
-Yoyo
-
-  
-  
-[(direct link)](#quantifiers)  
+| `\\w` | `.NET: "word character": Unicode letter, ideogram, digit, or connector` | `\\w-\\w\\w\\w` | `字-ま‿۳`|
+| `\\s` | `Most engines: "whitespace character": space, tab, newline, carriage return, vertical tab` | `a\\sb\\sc` | `a b` | `c` |
+| `\\s` | `.NET, Python 3, JavaScript: "whitespace character": any Unicode separator` | `a\\sb\\sc` | `a b` | `c` |
+| `\\D` | `One character that is not a _digit_ as defined by your engine's` | `_\\d_` | `\\D\\D\\D` | `ABC` |
+| `\\W` | `One character that is not a _word character_ as defined by your engine's` | `_\\w_` | `\\W\\W\\W\\W\\W` | `\*-+=)` |
+| `\\S` | `One character that is not a _whitespace character_ as defined by your engine's` | `_\\s_` | `\\S\\S\\S\\S` | `Yoyo` |  
 
 Quantifiers
 -----------
 
-Quantifier
+| Character | Legend | Example | Sample Match |
+| --- | --- | --- | --- |
 
-Legend
+| `+` | `One or more Version` | `\\w-\\w+` | `Version A-b1\_1` |
+| `{3}` | `Exactly three times` | `\\D{3}` | `ABC` |
+| `{2,4}` | `Two to four times` | `\\d{2,4}` | `156` |
+| `{3,}` | `Three or more times` | `\\w{3,}` | `regex\_tutorial` |
+| `\*` | `Zero or more times` | `A\*B\*C\*` | `AAACC` |
+| `?` | `Once or none` | `plurals?` | `plural` |
 
-Example
-
-Sample Match
-
-+
-
-One or more
-
-Version \\w-\\w+
-
-Version A-b1\_1
-
-{3}
-
-Exactly three times
-
-\\D{3}
-
-ABC
-
-{2,4}
-
-Two to four times
-
-\\d{2,4}
-
-156
-
-{3,}
-
-Three or more times
-
-\\w{3,}
-
-regex\_tutorial
-
-\*
-
-Zero or more times
-
-A\*B\*C\*
-
-AAACC
-
-?
-
-Once or none
-
-plurals?
-
-plural
-
-  
-  
 [(direct link)](#morechars)  
 
 More Characters
