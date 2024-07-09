@@ -23,46 +23,12 @@ For easy navigation, here are some jumping points to various sections of the pag
 Characters
 ----------
 
-Character
-
-Legend
-
-Example
-
-Sample Match
-
-\\d
-
-Most engines: one digit  
-from 0 to 9
-
-file\_\\d\\d
-
-file\_25
-
-\\d
-
-.NET, Python 3: one Unicode digit in any script
-
-file\_\\d\\d
-
-file\_9੩
-
-\\w
-
-Most engines: "word character": ASCII letter, digit or underscore
-
-\\w-\\w\\w\\w
-
-A-b\_1
-
-\\w
-
-.Python 3: "word character": Unicode letter, ideogram, digit, or underscore
-
-\\w-\\w\\w\\w
-
-字-ま\_۳
+| Character | Legend | Example | Sample Match |
+| --- | --- | --- | --- |
+| `\\d` | `Most engines: one digit` | `from 0 to 9` | `file\_\\d\\d` |
+| `\\d` | `.NET, Python 3: one Unicode digit in any script` | `file\_\\d\\d` | `file_9੩` |
+| `\\w` | `Most engines: "word character": ASCII letter, digit or underscore` | `\\w-\\w\\w\\w` | `A-b\_1` |
+| `\\w` | `.Python 3: "word character": Unicode letter, ideogram, digit, or underscore` | `\\w-\\w\\w\\w` | `字-ま\_۳` |
 
 \\w
 
