@@ -41,15 +41,12 @@ Quantifiers
 
 | Character | Legend | Example | Sample Match |
 | --- | --- | --- | --- |
-
 | `+` | `One or more Version` | `\\w-\\w+` | `Version A-b1\_1` |
 | `{3}` | `Exactly three times` | `\\D{3}` | `ABC` |
 | `{2,4}` | `Two to four times` | `\\d{2,4}` | `156` |
 | `{3,}` | `Three or more times` | `\\w{3,}` | `regex\_tutorial` |
 | `\*` | `Zero or more times` | `A\*B\*C\*` | `AAACC` |
 | `?` | `Once or none` | `plurals?` | `plural` |
-
-[(direct link)](#morechars)  
 
 More Characters
 ---------------
