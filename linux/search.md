@@ -1,14 +1,13 @@
 ### Search Commands
 
-```bash
+bash
 find / -name filenamme 2>/dev/null
 
 locate sample.txt
 
 which sudo
-```
+
 
 ### Line Search
-```bash
+bash
 echo grep 'text' | cut -f " " -f2
-```

@@ -25,50 +25,50 @@ Characters
 
 | Character | Legend | Example | Sample Match |
 | --- | --- | --- | --- |
-| `\\d` | `Most engines: one digit` | `from 0 to 9` | `file\_\\d\\d` |
-| `\\d` | `.NET, Python 3: one Unicode digit in any script` | `file\_\\d\\d` | `file_9੩` |
-| `\\w` | `Most engines: "word character": ASCII letter, digit or underscore` | `\\w-\\w\\w\\w` | `A-b\_1` |
-| `\\w` | `.Python 3: "word character": Unicode letter, ideogram, digit, or underscore` | `\\w-\\w\\w\\w` | `字-ま\_۳` |
-| `\\w` | `.NET: "word character": Unicode letter, ideogram, digit, or connector` | `\\w-\\w\\w\\w` | `字-ま‿۳`|
-| `\\s` | `Most engines: "whitespace character": space, tab, newline, carriage return, vertical tab` | `a\\sb\\sc` | `a b` | `c` |
-| `\\s` | `.NET, Python 3, JavaScript: "whitespace character": any Unicode separator` | `a\\sb\\sc` | `a b` | `c` |
-| `\\D` | `One character that is not a _digit_ as defined by your engine's` | `_\\d_` | `\\D\\D\\D` | `ABC` |
-| `\\W` | `One character that is not a _word character_ as defined by your engine's` | `_\\w_` | `\\W\\W\\W\\W\\W` | `\*-+=)` |
-| `\\S` | `One character that is not a _whitespace character_ as defined by your engine's` | `_\\s_` | `\\S\\S\\S\\S` | `Yoyo` |  
+| \\d | Most engines: one digit | from 0 to 9 | file\_\\d\\d |
+| \\d | .NET, Python 3: one Unicode digit in any script | file\_\\d\\d | file_9੩ |
+| \\w | Most engines: "word character": ASCII letter, digit or underscore | \\w-\\w\\w\\w | A-b\_1 |
+| \\w | .Python 3: "word character": Unicode letter, ideogram, digit, or underscore | \\w-\\w\\w\\w | 字-ま\_۳ |
+| \\w | .NET: "word character": Unicode letter, ideogram, digit, or connector | \\w-\\w\\w\\w | 字-ま‿۳|
+| \\s | Most engines: "whitespace character": space, tab, newline, carriage return, vertical tab | a\\sb\\sc | a b | c |
+| \\s | .NET, Python 3, JavaScript: "whitespace character": any Unicode separator | a\\sb\\sc | a b | c |
+| \\D | One character that is not a _digit_ as defined by your engine's | _\\d_ | \\D\\D\\D | ABC |
+| \\W | One character that is not a _word character_ as defined by your engine's | _\\w_ | \\W\\W\\W\\W\\W | \*-+=) |
+| \\S | One character that is not a _whitespace character_ as defined by your engine's | _\\s_ | \\S\\S\\S\\S | Yoyo |  
 
 Quantifiers
 -----------
 
 | Character | Legend | Example | Sample Match |
 | --- | --- | --- | --- |
-| `+` | `One or more Version` | `\\w-\\w+` | `Version A-b1\_1` |
-| `{3}` | `Exactly three times` | `\\D{3}` | `ABC` |
-| `{2,4}` | `Two to four times` | `\\d{2,4}` | `156` |
-| `{3,}` | `Three or more times` | `\\w{3,}` | `regex\_tutorial` |
-| `\*` | `Zero or more times` | `A\*B\*C\*` | `AAACC` |
-| `?` | `Once or none` | `plurals?` | `plural` |
+| + | One or more Version | \\w-\\w+ | Version A-b1\_1 |
+| {3} | Exactly three times | \\D{3} | ABC |
+| {2,4} | Two to four times | \\d{2,4} | 156 |
+| {3,} | Three or more times | \\w{3,} | regex\_tutorial |
+| \* | Zero or more times | A\*B\*C\* | AAACC |
+| ? | Once or none | plurals? | plural |
 
 More Characters
 ---------------
 
 | Character | Legend | Example | Sample Match |
 | --- | --- | --- | --- |
-| `.` | `any character except line break` | `a.c` | `abc` |
-| `.` | `Any character except line break` | `.*` | `whatever, man.` |
-| `\.` | `A period A period (special character: needs to be escaped by a \)` | `a\.c` | `a.c` |
-| `\` |`Escapes a special character`	| `\.\*\+\?    \$\^\/\\` | `.*+? $^/\` |
-| `\` | `Escapes a special character` | `\[\{\(\)\}\]` | `[{()}]` |
+| . | any character except line break | a.c | abc |
+| . | Any character except line break | .* | whatever, man. |
+| \. | A period A period (special character: needs to be escaped by a \) | a\.c | a.c |
+| \ |Escapes a special character	| \.\*\+\?    \$\^\/\\ | .*+? $^/\ |
+| \ | Escapes a special character | \[\{\(\)\}\] | [{()}] |
 
 Logic
 -----
 
 | Character | Legend | Example | Sample Match |
 | --- | --- | --- | --- |
-| ``|`` | ``Alternation / OR operand 22|33`` | `33` | 
-| `( … )` |	``Capturing group | A(nt|pple)`` | `Apple (captures "pple")` |
-| `\1`| `Contents of Group 1` | `r(\w)g\1x` | `regex` |
-| `\2` | `Contents of Group 2`| `(\d\d)\+(\d\d)=\2\+\1` | `12+65=65+12` |
-| `(?: … )` | `Non-capturing group` | `A(?:nt|pple)` | `Apple` |
+| | | Alternation / OR operand 22|33 | 33 | 
+| ( … ) |	Capturing group | A(nt|pple) | Apple (captures "pple") |
+| \1| Contents of Group 1 | r(\w)g\1x | regex |
+| \2 | Contents of Group 2| (\d\d)\+(\d\d)=\2\+\1 | 12+65=65+12 |
+| (?: … ) | Non-capturing group | A(?:nt|pple) | Apple |
  
 More White-Space
 ----------------

@@ -2,7 +2,7 @@
 
 **SMTP (Simple Mail Transfer Protocol)** is a networking protocol for [mail](mail.md) transfer. It's used to send emails from a mail client to a mail server and between mail servers.
 
-Server-to-Server communication is typically done over port `25`. Client-to-Server communication is typically done over port `587`. Alternatively, port `465` can be used for client-to-server communication with [TLS](../tls.md).
+Server-to-Server communication is typically done over port 25. Client-to-Server communication is typically done over port 587. Alternatively, port 465 can be used for client-to-server communication with [TLS](../tls.md).
 
 ## Configuration
 

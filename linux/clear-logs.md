@@ -1,5 +1,4 @@
 ### Clear All Logs
 
-```bash
+bash
 truncate -s 0 /var/log/*log
-```

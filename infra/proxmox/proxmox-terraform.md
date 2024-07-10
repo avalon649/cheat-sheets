@@ -6,11 +6,11 @@ You can use [Terraform](tools/terraform.md) to automate certain tasks on [Proxmo
 
 ### Create an API Token on Proxmox
 
-To create a new API Token for your `user` in Proxmox, follow the steps described in [Proxmox API Authentication](proxmox-api.md).
+To create a new API Token for your user in Proxmox, follow the steps described in [Proxmox API Authentication](proxmox-api.md).
 
 ### Add Provider config to Terraform
 
-```json
+json
 terraform {
   required_version = ">= 0.13.0"
 
@@ -21,9 +21,9 @@ terraform {
     }
   }
 }
-```
 
-```json
+
+json
 variable "PROXMOX_URL" {
     type = string
 }
@@ -43,7 +43,7 @@ provider "proxmox" {
     pm_api_token_secret = var.PROXMOX_TOKEN
     pm_tls_insecure = false
 }
-```
+
 
 ## Templates
 
@@ -55,12 +55,12 @@ WIP
 
 Existing virtual machines can be imported to the Terraform state file with the following command. Make sure, you have created a corresponding **Resource** in the **Terraform File**.
 
-```sh
+sh
 terraform import <resourcetype.resourcename> <id>
-```
 
-In the telmate/terraform-provider-proxmox, the id needs to be set according to `<node>/<type>/<vmid>`, like in the following example.
 
-```sh
+In the telmate/terraform-provider-proxmox, the id needs to be set according to <node>/<type>/<vmid>, like in the following example.
+
+sh
 terraform import proxmox_vm_qemu.srv-prod-1 prx-prod-1/proxmox_vm_qemu/102
-```
+

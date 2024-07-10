@@ -1,5 +1,4 @@
 ### Generate Basics Auth Password
 
-```bash
+bash
 echo $(htpasswd -nb <USER> <PASSWORD>) | sed -e s/\\$/\\$\\$/g
-```

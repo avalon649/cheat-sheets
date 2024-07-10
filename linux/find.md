@@ -1,7 +1,6 @@
 ### Adding find result to a varible
 
-```bash
+bash
 log=$(find / -name *.log)
 
 echo "$log"
-```

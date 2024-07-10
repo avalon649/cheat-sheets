@@ -1,17 +1,16 @@
 ### Generate key
 
-```bash
+bash
 ssh-keygen -t ecdsa -b 521
-```
+
 
 ### Import public ssh key
 
-```bash
+bash
 ssh-copy-id -i key.pub admin@192.168.5.55
-```
+
 
 ### Port fowarding
 
-```bash
+bash
 ssh -D <port> -N -C root@127.0.0.1
-```

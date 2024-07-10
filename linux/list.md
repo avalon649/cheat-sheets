@@ -1,5 +1,4 @@
 ### List Using Wildcards
 
-```bash
+bash
 ls -l *.conf
-```

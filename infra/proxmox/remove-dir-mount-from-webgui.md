@@ -1,5 +1,4 @@
 ### Remove Directory Mount From Web GUI
 
-```bash
+bash
 rm /etc/systemd/system/mnt-pve-testdir.mount
-```

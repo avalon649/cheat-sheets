@@ -1,6 +1,5 @@
 ###S Word Count 
 
-```bash
+bash
 | wc -l
 | less
-```

@@ -1,9 +1,8 @@
-```bash
+bash
 fdisk -l
 fdisk /dev/sdx
-```
 
-```bash
+
+bash
 d to delete partition
 w to write 
-```

@@ -4,8 +4,8 @@ SQLite is a relational database contained in a C library. In contrast to many ot
 
 SQLite generally follows the [PostgreSQL](databases/postgres.md) syntax but does not enforce type checking.
 
-You can open a SQLite Database with `sqlite3 <filename>` directly.
+You can open a SQLite Database with sqlite3 <filename> directly.
 
 ## Commands
 
-`.help` Shows all commands `.databases` Show all existing databases `.quit` Exists `.tables` Shows all tables `.backup` Backups current database
+.help Shows all commands .databases Show all existing databases .quit Exists .tables Shows all tables .backup Backups current database
