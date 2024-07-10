@@ -51,113 +51,25 @@ Quantifiers
 More Characters
 ---------------
 
-Character
-
-Legend
-
-Example
-
-Sample Match
-
-**.**
-
-Any character except line break
-
-a.c
-
-abc
-
-**.**
-
-Any character except line break
-
-.\*
-
-whatever, man.
-
-\\**.**
-
-A period (special character: needs to be escaped by a \\)
-
-a\\.c
-
-a.c
-
-\\
-
-Escapes a special character
-
-\\.\\\*\\+\\?    \\$\\^\\/\\\\
-
-.\*+?    $^/\\
-
-\\
-
-Escapes a special character
-
-\\\[\\{\\(\\)\\}\\\]
-
-\[{()}\]
-
-  
-  
-[(direct link)](#logic)  
+| Character | Legend | Example | Sample Match |
+| --- | --- | --- | --- |
+| `.` | `any character except line break` | `a.c` | `abc` |
+| `.` | `Any character except line break` | `.*` | `whatever, man.` |
+| `\.` | `A period A period (special character: needs to be escaped by a \)` | `a\.c` | `a.c` |
+| `\` |`Escapes a special character`	| `\.\*\+\?    \$\^\/\\` | `.*+? $^/\` |
+| `\` | `Escapes a special character` | `\[\{\(\)\}\]` | `[{()}]` |
 
 Logic
 -----
 
-Logic
-
-Legend
-
-Example
-
-Sample Match
-
-|
-
-Alternation / OR operand
-
-22|33
-
-33
-
-( … )
-
-Capturing group
-
-A(nt|pple)
-
-Apple (captures "pple")
-
-\\1
-
-Contents of Group 1
-
-r(\\w)g\\1x
-
-regex
-
-\\2
-
-Contents of Group 2
-
-(\\d\\d)\\+(\\d\\d)=\\2\\+\\1
-
-12+65=65+12
-
-(?: … )
-
-Non-capturing group
-
-A(?:nt|pple)
-
-Apple
-
-  
-  
-[(direct link)](#whitespace)  
-
+| Character | Legend | Example | Sample Match |
+| --- | --- | --- | --- |
+| ``|`` | ``Alternation / OR operand 22|33`` | `33` | 
+| `( … )` |	``Capturing group | A(nt|pple)`` | `Apple (captures "pple")` |
+| `\1`| `Contents of Group 1` | `r(\w)g\1x` | `regex` |
+| `\2` | `Contents of Group 2`| `(\d\d)\+(\d\d)=\2\+\1` | `12+65=65+12` |
+| `(?: … )` | `Non-capturing group` | `A(?:nt|pple)` | `Apple` |
+ 
 More White-Space
 ----------------
 
