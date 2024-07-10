@@ -24,7 +24,7 @@ Characters
 ----------
 
 | Character | Legend | Example | Sample Match |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | \\d | Most engines: one digit | from 0 to 9 | file\_\\d\\d |
 | \\d | .NET, Python 3: one Unicode digit in any script | file\_\\d\\d | file_9੩ |
 | \\w | Most engines: "word character": ASCII letter, digit or underscore | \\w-\\w\\w\\w | A-b\_1 |
@@ -40,7 +40,7 @@ Quantifiers
 -----------
 
 | Character | Legend | Example | Sample Match |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | + | One or more Version | \\w-\\w+ | Version A-b1\_1 |
 | {3} | Exactly three times | \\D{3} | ABC |
 | {2,4} | Two to four times | \\d{2,4} | 156 |
@@ -52,162 +52,52 @@ More Characters
 ---------------
 
 | Character | Legend | Example | Sample Match |
-| --- | --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | . | any character except line break | a.c | abc |
-| . | Any character except line break | .* | whatever, man. |
+| . | Any character except line break | ``.*`` | whatever, man. |
 | \. | A period A period (special character: needs to be escaped by a \) | a\.c | a.c |
-| \ |Escapes a special character	| \.\*\+\?    \$\^\/\\ | .*+? $^/\ |
+| \ |Escapes a special character | \.\*\+\?    \$\^\/\\ | .*+? $^/\ |
 | \ | Escapes a special character | \[\{\(\)\}\] | [{()}] |
 
 Logic
 -----
 
 | Character | Legend | Example | Sample Match |
-| --- | --- | --- | --- |
-| | | Alternation / OR operand 22|33 | 33 | 
-| ( … ) |	Capturing group | A(nt|pple) | Apple (captures "pple") |
+| --- | --- | --- | --- | --- |
+| | | Alternation / OR operand 22|33 | 33 |
+| ( … ) | Capturing group | A(nt|pple) | Apple (captures "pple") |
 | \1| Contents of Group 1 | r(\w)g\1x | regex |
 | \2 | Contents of Group 2| (\d\d)\+(\d\d)=\2\+\1 | 12+65=65+12 |
 | (?: … ) | Non-capturing group | A(?:nt|pple) | Apple |
- 
+
 More White-Space
 ----------------
 
-Character
-
-Legend
-
-Example
-
-Sample Match
-
-\\t
-
-Tab
-
-T\\t\\w{2}
-
-T     ab
-
-\\r
-
-Carriage return character
-
-see below
-
-\\n
-
-Line feed character
-
-see below
-
-\\r\\n
-
-Line separator on Windows
-
-AB\\r\\nCD
-
-AB  
-CD
-
-\\N
-
-Perl, PCRE (C, PHP, R…): one character that is not a line break
-
-\\N+
-
-ABC
-
-\\h
-
-Perl, PCRE (C, PHP, R…), Java: one horizontal whitespace character: tab or Unicode space separator
-
-\\H
-
-One character that is not a horizontal whitespace
-
-\\v
-
-.NET, JavaScript, Python, Ruby: vertical tab
-
-\\v
-
-Perl, PCRE (C, PHP, R…), Java: one vertical whitespace character: line feed, carriage return, vertical tab, form feed, paragraph or line separator
-
-\\V
-
-Perl, PCRE (C, PHP, R…), Java: any character that is not a vertical whitespace
-
-\\R
-
-Perl, PCRE (C, PHP, R…), Java: one line break (carriage return + line feed pair, and all the characters matched by \\v)
-
-  
-  
-[(direct link)](#morequants)  
+| Character | Legend | Example | Sample Match |
+| --- | --- | --- | --- | --- |
+| \t | Tab | T\t\w{2} | T ab |
+| \r | Carriage return character | see below |
+| \n | Line feed character | see below |
+| \r\n | Line separator on Windows | AB\r\nCD | ABCD |
+| \N | Perl, PCRE (C, PHP, R…): one character that is not a line break | \N+ | ABC |
+| \h | Perl, PCRE (C, PHP, R…), Java: one horizontal whitespace character: tab or Unicode space separator |
+| \H | One character that is not a horizontal whitespace |
+| \v | .NET, JavaScript, Python, Ruby: vertical tab |
+| \v | Perl, PCRE (C, PHP, R…), Java: one vertical whitespace character: line feed, carriage return, vertical tab, form feed, paragraph or line separator |
+| \V | Perl, PCRE (C, PHP, R…), Java: any character that is not a vertical whitespace |
+| \R | Perl, PCRE (C, PHP, R…), Java: one line break (carriage return + line feed pair, and all the characters matched by \v) |
 
 More Quantifiers
 ----------------
 
-Quantifier
-
-Legend
-
-Example
-
-Sample Match
-
-+
-
-The + (one or more) is "greedy"
-
-\\d+
-
-12345
-
-?
-
-Makes quantifiers "lazy"
-
-\\d+?
-
-1 in **1**2345
-
-\*
-
-The \* (zero or more) is "greedy"
-
-A\*
-
-AAA
-
-?
-
-Makes quantifiers "lazy"
-
-A\*?
-
-empty in AAA
-
-{2,4}
-
-Two to four times, "greedy"
-
-\\w{2,4}
-
-abcd
-
-?
-
-Makes quantifiers "lazy"
-
-\\w{2,4}?
-
-ab in **ab**cd
-
-  
-  
-[(direct link)](#classes)  
+| Character | Legend | Example | Sample Match |
+| --- | --- | --- | --- | --- |
+| + | The + (one or more) is "greedy" | \d+ | 12345 |
+| ? | Makes quantifiers "lazy" | \d+? | 1 in 12345 |
+| `*` | The `*` (zero or more) is "greedy" | A* | AAA |
+| ? | Makes quantifiers "lazy"	A*?	empty in AAA
+| {2,4} |	Two to four times, "greedy"	\w{2,4}	abcd|
+| ? |	Makes quantifiers "lazy"	\w{2,4}?	ab in abcd 
 
 Character Classes
 -----------------
