@@ -1,31 +1,31 @@
 ## Install CIFS
 
-bash
+```bash
 apt -y update
 apt-get install cifs-utls -y
+```
 
-
-bash
+```bash
 nano /etc/fstab
+```
 
-
-bash
+```bash
 touch .smbcredentials
 user=user
 password=pass
+```
 
-
-bash
+```bash
 chmmod 600 .smbcredentials
-
+```
 
 ## Install NFS
 Install NFS Client on Ubuntu
 
-bash
+```bash
  apt -y update
  apt -y install nfs-common
-
+```
 
 ### Configuration
 *TEMP EXAMPLE*:

@@ -1,14 +1,15 @@
-bash
+```bash
 rndc dumpdb -cache
+```
 
-
-bash
+```bash
 rndc flush
+```
 
-
-bash
+```bash
 rndc reload
+```
 
-
-bash
+```bash
 rndc dumpdb -cache
+```
