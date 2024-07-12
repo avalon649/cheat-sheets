@@ -1,9 +1,10 @@
 ### Kill Commands
 
-bash
+```bash
 ps -u(userid) | grep (processname)
 kill (process-id)
 pgrep
 kgrep
 top
 htop
+```

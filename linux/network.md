@@ -5,7 +5,7 @@ hostnamectl set-hostname newhostname
 
 ## Change IP Address in Ubuntu 20.04 LTS
 1. Create a new file /etc/netplan/01-netcfg.yaml
-yaml
+```yaml
 network:
   version: 2
   renderer: networkd
@@ -17,33 +17,35 @@ network:
       gateway4: 192.168.121.1
       nameservers:
           addresses: [8.8.8.8, 1.1.1.1]
+```
 
 2. Apply changes
 
-bash
+```bash
 netplay apply
-
+```
 
 ## List All Listenting Ports on Your Machine
 
-bash
+```bash
 lsof -i -P -n |grep LISTEN
 
 netstat -ntlp
-
+```
 
 ## Launch A Quick Web Server
 
-bash
+```bash
 python -m http.server 7777
 
 php -S 127.0.0.1:8888
 
 npx http.server -p 8888
+```
 
 ### Interfaces Config
 
-bash
+```config
 # This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
 
@@ -58,3 +60,4 @@ iface eth0 inet static
 address 10.0.21.55
 netmask 255.255.255.0
 gateway 10.0.21.1
+```
