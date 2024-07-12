@@ -1,4 +1,4 @@
-### RNDC
+# RNDC
 
 ```bash
 rndc dumpdb -cache
