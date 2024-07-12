@@ -41,13 +41,13 @@ Now that we have our new share configured, save it and restart Samba for it to t
 
 ```bash
 sudo service smbd restart
-
+```
 
 Update the firewall rules to allow Samba traffic:
 
 ```bash
 sudo ufw allow samba
-
+```
 
 Setting up User Accounts and Connecting to Share
 
@@ -55,3 +55,4 @@ Since Samba doesn’t use the system account password, we need to set up a Samba
 
 ```bash
 sudo smbpasswd -a username
+```
