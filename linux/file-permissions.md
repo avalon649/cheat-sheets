@@ -4,7 +4,7 @@ As all Linux users, you will at some point need to modify the permission setting
 
 #### The basic syntax is:
 
-`chmod [permission] [file_name]`
+chmod [permission] [file_name]
 
 #### There are two ways to define permission:
 
@@ -19,7 +19,7 @@ Type the initial letter for each class, followed by the equal sign (=) and the f
 
 To set a file, so it is public for reading, writing, and executing, the command is:
 
-`chmod u=rwx,g=rwx,o=rwx [file_name]`
+chmod u=rwx,g=rwx,o=rwx [file_name]
 
 To set permission as in the previously mentioned test.txt to be:
 * read and write for the user
@@ -28,7 +28,7 @@ To set permission as in the previously mentioned test.txt to be:
 
 #### Use the following command:
 
-`chmod u=rw,g=r,o=r test.txt`
+chmod u=rw,g=r,o=r test.txt
 
 Note: There is no space between the categories; we only use commas to separate them.
 Define File Permission in Octal/Numeric Mode
@@ -55,4 +55,4 @@ For instance, let’s look at the test.txt file that we symbolically configured 
 
 #### The same permission settings can be defined using the octal format with the command:
 
-`chmod 644 test.txt`
+chmod 644 test.txt

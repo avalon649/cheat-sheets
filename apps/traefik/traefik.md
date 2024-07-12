@@ -56,12 +56,12 @@ entryPoints:
 
 
 **traefik.http.routers.router.entrypoints** 
-Specifies the Entrypoint for the Router. Setting this to `traefik.http.routers.router.entrypoints: websecure` will expose the Container on the `websecure` entrypoint.
-*When using websecure, you should enable `traefik.http.routers.router.tls` as well.
+Specifies the Entrypoint for the Router. Setting this to traefik.http.routers.router.entrypoints: websecure will expose the Container on the websecure entrypoint.
+*When using websecure, you should enable traefik.http.routers.router.tls as well.
 
 **traefik.http.routers.router.rule**
 Specify the Rules for the Router.
-*This is an example for an FQDN: Host(`subdomain.your-domain`)*
+*This is an example for an FQDN: Host(subdomain.your-domain)*
 
 **traefik.http.routers.router.tls**	
 Will enable TLS protocol on the router.
@@ -76,19 +76,19 @@ WIP
 - "traefik.enable=true"
 - "traefik.http.routers.nginx-test.entrypoints=websecure"
 - "traefik.http.routers.nginx-test.tls=true"
-- "traefik.http.routers.nginx-test.rule=PathPrefix(`/nginx-test/`)"
+- "traefik.http.routers.nginx-test.rule=PathPrefix(/nginx-test/)"
 - "traefik.http.routers.nginx-test.middlewares=nginx-test"
 - "traefik.http.middlewares.nginx-test.stripprefix.prefixes=/nginx-test"
-```
 
-Add `/api` prefix to any requets to `myapidomain.com`
+
+Add /api prefix to any requets to myapidomain.com
 Example: 
-  - Request -> `myapidomain.com`
-  - Traefik translates this to `myapidomain.com/api` without requestee seeing it
-```yml
+  - Request -> myapidomain.com
+  - Traefik translates this to myapidomain.com/api without requestee seeing it
+yml
 - "traefik.enable=true"
 - "traefik.http.routers.myapp-secure-api.tls=true"
-- "traefik.http.routers.myapp-secure-api.rule=Host(`myapidomain.com`)"
+- "traefik.http.routers.myapp-secure-api.rule=Host(myapidomain.com)"
 - "traefik.http.routers.myapp-secure-api.middlewares=add-api"
 
 # Middleware
@@ -100,7 +100,7 @@ Example:
 WIP
 
 ### dnsChallenge
-DNS Providers such as `cloudflare`, `digitalocean`, `civo`, and more. To get a full list of supported providers, look up the [Traefik ACME Documentation](https://doc.traefik.io/traefik/https/acme/) .
+DNS Providers such as cloudflare, digitalocean, civo, and more. To get a full list of supported providers, look up the [Traefik ACME Documentation](https://doc.traefik.io/traefik/https/acme/) .
 
 ```yaml
 certificatesResolvers:
@@ -117,7 +117,7 @@ certificatesResolvers:
 ## ServersTransport
 
 ### InsecureSkipVerify
-If you want to skip the TLS verification from **Traefik** to your **Servers**, you can add the following section to your `traefik.yml` config file.
+If you want to skip the TLS verification from **Traefik** to your **Servers**, you can add the following section to your traefik.yml config file.
 ```yaml
 serversTransport:
   insecureSkipVerify: true
@@ -158,7 +158,7 @@ providers:
 ```
 
 ### Docker
-With `exposedByDefault: false`, Traefik won't automatically expose any containers by default. Setting `traefik.enable: true`, will expose the Container.
+With exposedByDefault: false, Traefik won't automatically expose any containers by default. Setting traefik.enable: true, will expose the Container.
 
 ```yaml
 providers:

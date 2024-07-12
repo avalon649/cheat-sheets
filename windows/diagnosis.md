@@ -1,6 +1,6 @@
 #### Network Diagnosis
 
-```bash
+bash
 ipconfig /all | findstr DNS
 
 ipconfig /release
@@ -34,9 +34,9 @@ netstat -af -o
 route -p
 
 route add ip.address mask subnet-mask gateway
-```
+
 #### Pc Diagnosis
-```bash
+bash
 powercfg /energy
 
 powercfg /batteryreport
@@ -56,4 +56,4 @@ tasklist | findstr process.exe
 taskkill /f /pid   processId
 
 shutdown /r /fw /f /t 0
-```
+

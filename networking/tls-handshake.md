@@ -13,7 +13,7 @@ TLS handshakes are a foundational part of how HTTPS works.
 
 SSL, or Secure Sockets Layer, was the original encryption protocol developed for HTTP. SSL was replaced by TLS, or Transport Layer Security, some time ago. SSL handshakes are now called TLS handshakes, although the "SSL" name is still in wide use.
 
-```
+
 ┌───────────┐                ┌───────────┐
 │  Client  │                │ 力 Server  │
 └─────┬─────┘                └─────┬─────┘
@@ -45,4 +45,3 @@ SSL, or Secure Sockets Layer, was the original encryption protocol developed for
       │        7. ChangeCipherSpec │    │
       │           Finished         │  ──┘
 
-```

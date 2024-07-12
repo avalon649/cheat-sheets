@@ -4,6 +4,6 @@
 ---
 ## Open new Remote Session
 
-```powershell
+powershell
 Enter-PSSession -ComputerName <SERVER> -Credential <USERNAME>
-```
+

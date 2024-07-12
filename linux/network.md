@@ -1,10 +1,10 @@
 ## Change Hostname
 
-```bash
+bash
 hostnamectl set-hostname newhostname
-```
+
 ## Change IP Address in Ubuntu 20.04 LTS
-1. Create a new file `/etc/netplan/01-netcfg.yaml`
+1. Create a new file /etc/netplan/01-netcfg.yaml
 ```yaml
 network:
   version: 2
@@ -18,6 +18,7 @@ network:
       nameservers:
           addresses: [8.8.8.8, 1.1.1.1]
 ```
+
 2. Apply changes
 
 ```bash
@@ -41,9 +42,10 @@ php -S 127.0.0.1:8888
 
 npx http.server -p 8888
 ```
+
 ### Interfaces Config
 
-```bash
+```config
 # This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
 

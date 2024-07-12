@@ -3,23 +3,22 @@
 
 1. Install PIP
 
-```bash
+bash
 sudo apt install python3-pip
-```
+
 
 2. Install Ansible
 
-```bash
+bash
 pip3 install ansible
-```
+
 
 3. Add execution path
 
-```bash
+bash
 
 ansible -i ./inventory/hosts ubuntu -m ping --user someuser --ask-pass
-```
 
-```bash
+
+bash
 ansible-playbook ./playbooks/apt.yml --user someuser --ask-pass --ask-become-pass -i ./inventory/hosts
-```

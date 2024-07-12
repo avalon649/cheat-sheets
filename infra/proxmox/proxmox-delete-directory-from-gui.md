@@ -2,17 +2,17 @@
 
 #### From Proxmox Terminal
 
-```bash
+bash
 systemctl disable mnt-pve-testdir.mount
 umount /mnt/pve/testdir
-```
 
-```bash
+
+bash
 nano /proc/mounts
-```
 
-```bash
+
+bash
 rm /etc/systemd/system/mnt-pve-testdir.mount
-```
 
-```reboot```
+
+reboot

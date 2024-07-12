@@ -9,24 +9,24 @@ Documentation: [Nginx Unit Docs](https://unit.nginx.org/)
 
 Logging and debugging:
 
-```nginx
+nginx
 error_log <file> <loglevel>
     error_log logs/error.log;
     error_log logs/debug.log debug;
     error_log logs/error.log notice;
-```
+
 
 basic listening ports:
 
-```nginx
+nginx
 listen <port> <options>
         listen 80;
         listen 443 ssl http2;
         listen 443 http3 reuseport; (this is experimental!)
-```
+
 
 header modifcations:
-```nginx
+nginx
 add_header <header> <values>
         add_header Alt-svc '$http3=":<port>"; ma=<value>'; (this is experimental!)
 
@@ -74,10 +74,10 @@ location <url> {
         expires max;
         log_not_found off;
 }
-```
+
 ## Reverse Proxy
 ### Show Client's real IP
-```nginx
+nginx
 server {
 	server_name example.com;
 	location / { 
@@ -88,4 +88,3 @@ server {
 		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 	}
 }
-```

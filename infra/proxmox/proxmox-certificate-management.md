@@ -14,22 +14,22 @@ The CA certificate and key are stored in the Proxmox Cluster File System (pmxcfs
 The REST API and web GUI are provided by the pveproxy service, which runs on each node.
 You have the following options for the certificate used by pveproxy:
 
-* By default the node-specific certificate in `/etc/pve/nodes/NODENAME/pve-ssl.pem` is used. This certificate is signed by the cluster CA and therefore not automatically trusted by browsers and operating systems.
+* By default the node-specific certificate in /etc/pve/nodes/NODENAME/pve-ssl.pem is used. This certificate is signed by the cluster CA and therefore not automatically trusted by browsers and operating systems.
 * Use an externally provided certificate (e.g. signed by a commercial CA).
 * Use ACME (Let's Encrypt) to get a trusted certificate with automatic renewal, this is also integrated in the Proxmox VE API and web interface.
 
-For options 2 and 3 the file `/etc/pve/local/pveproxy-ssl.pem` (and
-`/etc/pve/local/pveproxy-ssl.key`, which needs to be without password) is used.
-Keep in mind that `/etc/pve/local` is a node specific symlink to
-`/etc/pve/nodes/NODENAME`.
+For options 2 and 3 the file /etc/pve/local/pveproxy-ssl.pem (and
+/etc/pve/local/pveproxy-ssl.key, which needs to be without password) is used.
+Keep in mind that /etc/pve/local is a node specific symlink to
+/etc/pve/nodes/NODENAME.
 
 Certificates are managed with the Proxmox VE Node management command
-(see the `pvenode(1)` manpage).
+(see the pvenode(1) manpage).
 
 Do not replace or manually modify the automatically generated node
-certificate files in `/etc/pve/local/pve-ssl.pem` and
-`/etc/pve/local/pve-ssl.key` or the cluster CA files in
-`/etc/pve/pve-root-ca.pem` and `/etc/pve/priv/pve-root-ca.key`.
+certificate files in /etc/pve/local/pve-ssl.pem and
+/etc/pve/local/pve-ssl.key or the cluster CA files in
+/etc/pve/pve-root-ca.pem and /etc/pve/priv/pve-root-ca.key.
 
 ## Upload Custom Certificate
 
@@ -49,7 +49,7 @@ Currently, the two ACME endpoints implemented are the
 Let's Encrypt (LE) production and its staging
 environment. Our ACME client supports validation of http-01 challenges using
 a built-in web server and validation of dns-01 challenges using a DNS plugin
-supporting all the DNS API endpoints `acme.sh` does.
+supporting all the DNS API endpoints acme.sh does.
 
 ### ACME Account
 
@@ -57,11 +57,11 @@ You need to register an ACME account per cluster with the endpoint you want to
 use. The email address used for that account will serve as contact point for
 renewal-due or similar notifications from the ACME endpoint.
 You can register and deactivate ACME accounts over the web interface
-`Datacenter -&gt; ACME` or using the `pvenode` command line tool.
+Datacenter -&gt; ACME or using the pvenode command line tool.
 
-```shell
+shell
  pvenode acme account register account-name mail@example.com
-```
+
 
 Because of rate-limits you should use LE staging for experiments or if you use
 ACME for the first time.
@@ -80,16 +80,16 @@ the public internet. The dns-01 challenge can be used in these cases.  This
 challenge is fulfilled by creating a certain DNS record in the domain's zone.
 
 Proxmox VE supports both of those challenge types out of the box, you can configure
-plugins either over the web interface under `Datacenter -&gt; ACME`, or using the
-`pvenode acme plugin add` command.
+plugins either over the web interface under Datacenter -&gt; ACME, or using the
+pvenode acme plugin add command.
 
-ACME Plugin configurations are stored in `/etc/pve/priv/acme/plugins.cfg`.
+ACME Plugin configurations are stored in /etc/pve/priv/acme/plugins.cfg.
 A plugin is available for all nodes in the cluster.
 
 ### Node Domains
 
 Each domain is node specific. You can add new or manage existing domain entries
-under Node -&gt; Certificates, or using the `pvenode config` command.
+under Node -&gt; Certificates, or using the pvenode config command.
 
 After configuring the desired domain(s) for a node and ensuring that the
 desired ACME account is selected, you can order your new certificate over the
@@ -102,7 +102,7 @@ Renewal will happen automatically.
 There is always an implicitly configured standalone plugin for validating
 http-01 challenges via the built-in webserver spawned on port 80.
 
-The name `standalone` means that it can provide the validation on it's
+The name standalone means that it can provide the validation on it's
 own, without any third party service. So, this plugin works also for cluster
 nodes.
 
@@ -128,12 +128,12 @@ Proxmox VE re-uses the DNS plugins developed for the
 refer to its documentation for details on configuration of specific APIs.
 
 The easiest way to configure a new plugin with the DNS API is using the web
-interface (`Datacenter -&gt; ACME`).
+interface (Datacenter -&gt; ACME).
 
 Choose DNS as challenge type. Then you can select your API provider, enter
 the credential data to access your account over their API.
 
-See the `acme.sh`
+See the acme.sh
 [How to use DNS API](https://github.com/acmesh-official/acme.sh/wiki/dnsapi#how-to-use-dns-api)
 wiki for more detailed information about getting API credentials for your
 provider.
@@ -147,10 +147,10 @@ bigger text area, simply copy all the credentials KEY=VALUE pairs in there.
 A special alias mode can be used to handle the validation on a different
 domain/DNS server, in case your primary/real DNS does not support provisioning
 via an API. Manually set up a permanent CNAME record for
-`_acme-challenge.domain1.example` pointing to `_acme-challenge.domain2.example`
+_acme-challenge.domain1.example pointing to _acme-challenge.domain2.example
 and set the alias property in the Proxmox VE node configuration file to
-`domain2.example` to allow the DNS server of `domain2.example` to validate all
-challenges for `domain1.example`.
+domain2.example to allow the DNS server of domain2.example to validate all
+challenges for domain1.example.
 
 ### Combination of Plugins
 
@@ -164,15 +164,15 @@ should be avoided if possible.
 ## Automatic renewal of ACME certificates
 
 If a node has been successfully configured with an ACME-provided certificate
-(either via `pvenode` or via the GUI), the certificate will be automatically
-renewed by the `pve-daily-update.service`. Currently, renewal will be attempted
+(either via pvenode or via the GUI), the certificate will be automatically
+renewed by the pve-daily-update.service. Currently, renewal will be attempted
 if the certificate has expired already, or will expire in the next 30 days.
 
 ## ACME Examples with pvenode
 
-*Example*: Sample `pvenode` invocation for using Let's Encrypt certificates
+*Example*: Sample pvenode invocation for using Let's Encrypt certificates
 
-```sh
+sh
 root@proxmox:~# pvenode acme account register default mail@example.invalid
 Directory endpoints:
 0) Let's Encrypt V2 (https://acme-v02.api.letsencrypt.org/directory)
@@ -195,7 +195,7 @@ Downloading certificate
 Setting pveproxy certificate and key
 Restarting pveproxy
 Task OK
-```
+
 
 *Example*: Setting up the OVH API for validating a domain
 
@@ -207,7 +207,7 @@ API documentation
 
 First you need to get all information so you and Proxmox VE can access the API.
 
-```sh
+sh
 root@proxmox:~# cat /path/to/api-token
 OVH_AK=XXXXXXXXXXXXXXXX
 OVH_AS=YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
@@ -228,14 +228,14 @@ https://eu.api.ovh.com/1.0/auth/credential  -d '{
 {"consumerKey":"ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ","state":"pendingValidation","validationUrl":"https://eu.api.ovh.com/auth/?credentialToken=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"}
 (open validation URL and follow instructions to link Application Key with account/Consumer Key)
 root@proxmox:~# echo "OVH_CK=ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ" &gt;&gt; /path/to/api-token
-```
+
 
 Now you can setup the ACME plugin:
 
-```sh
+sh
 root@proxmox:~# pvenode acme plugin add dns example_plugin --api ovh --data /path/to/api_token
 root@proxmox:~# pvenode acme plugin config example_plugin
-```sh
+sh
 <pre>
 ┌────────┬──────────────────────────────────────────┐
 │ key    │ value                                    │
@@ -257,7 +257,7 @@ root@proxmox:~# pvenode acme plugin config example_plugin
 At last you can configure the domain you want to get certificates for and
 place the certificate order for it:
 
-```sh
+sh
 root@proxmox:~# pvenode config set -acmedomain0 example.proxmox.com,plugin=example_plugin
 root@proxmox:~# pvenode acme cert order
 Loading ACME account details
@@ -287,7 +287,7 @@ Downloading certificate
 Setting pveproxy certificate and key
 Restarting pveproxy
 Task OK
-```
+
 
 ### Example: Switching from the staging to the regular ACME directory
 
@@ -296,9 +296,9 @@ supports more than one account you can just create a new one with the
 production (trusted) ACME directory as endpoint.  You can also deactivate the
 staging account and recreate it.
 
-*Example*: Changing the default ACME account from staging to directory using `pvenode`
+*Example*: Changing the default ACME account from staging to directory using pvenode
 
-```sh
+sh
 root@proxmox:~# pvenode acme account deactivate default
 Renaming account file from '/etc/pve/priv/acme/default' to '/etc/pve/priv/acme/_deactivated_default_4'
 Task OK
@@ -312,4 +312,4 @@ Terms of Service: https://letsencrypt.org/documents/LE-SA-v1.2-November-15-2017.
 Do you agree to the above terms? [y|N]y
 ...
 Task OK
-```
+

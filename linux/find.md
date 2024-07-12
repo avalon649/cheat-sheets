@@ -2,6 +2,6 @@
 
 ```bash
 log=$(find / -name *.log)
+```
 
 echo "$log"
-```

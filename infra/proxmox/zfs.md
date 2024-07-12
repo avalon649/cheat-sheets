@@ -34,7 +34,7 @@ Currently, the following operations are supported in a ZFS mirrored configuratio
 
 In addition to a mirrored storage pool configuration, **ZFS provides a RAID-Z configuration with either single-, double-, or triple-parity fault tolerance**. Single-parity RAID-Z (raidz or raidz1) is similar to RAID-5. Double-parity RAID-Z (raidz2) is similar to RAID-6.
 
-A RAID-Z configuration with N disks of size X with P parity disks can hold approximately `(N-P)*X` bytes and can withstand P device(s) failing before data integrity is compromised. You need at least two disks for a single-parity RAID-Z configuration and at least three disks for a double-parity RAID-Z configuration. For example, if you have three disks in a single-parity RAID-Z configuration, parity data occupies disk space equal to one of the three disks. Otherwise, no special hardware is required to create a RAID-Z configuration.
+A RAID-Z configuration with N disks of size X with P parity disks can hold approximately (N-P)*X bytes and can withstand P device(s) failing before data integrity is compromised. You need at least two disks for a single-parity RAID-Z configuration and at least three disks for a double-parity RAID-Z configuration. For example, if you have three disks in a single-parity RAID-Z configuration, parity data occupies disk space equal to one of the three disks. Otherwise, no special hardware is required to create a RAID-Z configuration.
 
 If you are creating a RAID-Z configuration with many disks, consider splitting the disks into multiple groupings. For example, a RAID-Z configuration with 14 disks is better split into two 7-disk groupings. **RAID-Z configurations with single-digit groupings of disks should perform better.**
 
@@ -44,12 +44,12 @@ If you are creating a RAID-Z configuration with many disks, consider splitting t
 The simplest way to check data integrity is to initiate an explicit scrubbing of all data within the pool. This operation traverses all the data in the pool once and verifies that all blocks can be read. Scrubbing proceeds as fast as the devices allow, though the priority of any I/O remains below that of normal operations. This operation might negatively impact performance, though the pool's data should remain usable and nearly as responsive while the scrubbing occurs.
 
 **Scrub ZFS Pool:**
-```bash
+bash
 zpool scrub POOLNAME
-```
+
 
 **Example:**
-```bash
+bash
 zpool status -v POOLNAME
 
   pool: store
@@ -57,7 +57,7 @@ zpool status -v POOLNAME
   scan: scrub in progress since Fri Nov  4 06:43:51 2022
 	317G scanned at 52.9G/s, 1.09M issued at 186K/s, 3.41T total
 	0B repaired, 0.00% done, no estimated completion time
-```
+
 
 ---
 ## Resilvering

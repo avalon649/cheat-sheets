@@ -1,5 +1,4 @@
 ### lsof
 
-```bash
+bash
 lsof -i :port
-```
