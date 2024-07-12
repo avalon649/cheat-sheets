@@ -8,15 +8,15 @@ Documentation & Project Homepage: [Argo CD Docs](https://argo-cd.readthedocs.io/
 
 1. Install Argo CD on a **[Kubernetes](kubernetes/kubernetes.md) Cluster, using [kubectl](kubernetes/kubectl)**.
 
-bash
+```bash
 kubectl create namespace argocd
 
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-
+```
 
 2. Add **[Traefik](traefik/traefik.md) IngressRoute. 
 
-yaml
+```yaml
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
@@ -41,7 +41,7 @@ spec:
           scheme: h2c
   tls:
     certResolver: default
-
+```
 
 3. Disable internal TLS
 
@@ -59,9 +59,9 @@ Edit the --insecure flag in the argocd-server command of the argocd-server d
 
 For Argo CD v1.8 and earlier, the initial password is set to the name of the server pod, for Argo CD v1.9 and later, the initial password is available from a secret named argocd-initial-admin-secret.
 
-bash
+```bash
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
-
+```
 
 ---
 ## Configuration
@@ -72,7 +72,7 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 2. Add new repository in ArgoCD via **[kubectl](kubernetes/kubectl) or the GUI
 
-yaml
+```yaml
 apiVersion: v1  
 kind: Secret  
 metadata:  
@@ -83,7 +83,7 @@ stringData:
   url: https://github.com/xcad2k/private-repo 
   password: <github-token> 
   username: not-used
-
+```
 
 3. Verify new repository is connected
 
@@ -106,7 +106,7 @@ Below, you find an example for an Application and an ApplicationSet.
 
 **Application:**
 
-yaml
+```yaml
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -125,11 +125,11 @@ spec:
     automated:
       prune: false
       selfHeal: false
-
+```
 
 **ApplicationSet:**
 
-yaml
+```yaml
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
@@ -151,7 +151,7 @@ spec:
       destination:
         server: '{{server}}'
         namespace: default
-
+```
 
 ## Further information
 

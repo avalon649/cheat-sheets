@@ -6,18 +6,18 @@ In order to avoid breaking existing configurations, Teleport's configuration is 
 
 ### Log Settings
 
-yaml
+```yaml
 teleport:
   log:
     output: stderr
     severity: INFO
     format:
       output: text
-
+```
 
 ## Proxy Service
 
-yaml
+```yaml
 proxy_service:
   enabled: "yes"
   web_listen_addr: 0.0.0.0:3080
@@ -29,17 +29,17 @@ proxy_service:
   # acme:
   #   enabled: "yes"
   #   email: your-email-address
-
+```
 
 ## Auth Service
 
-yaml
+```yaml
 auth_service:
   enabled: "yes"
   listen_addr: 0.0.0.0:3025
   proxy_listener_mode: multiplex
   cluster_name: your-server-url
-
+```
 
 ## Additional Services Configuration
 

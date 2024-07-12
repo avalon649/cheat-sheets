@@ -8,18 +8,18 @@ The **'Teleport App Service'** is a secure and convenient way to access internal
 
 ### Example: wildcard certificate in [Traefik](../traefik/traefik.md)
 
-yaml
+```yaml
 labels:
 - "traefik.http.routers.teleport.rule=HostRegexp(teleport.your-domain, {subhost:[a-z]+}.teleport.your-domain)"
 - "traefik.http.routers.teleport.tls.domains[0].main=teleport.your-domain"
 - "traefik.http.routers.teleport.tls.domains[0].sans=*.teleport.your-domain"
-
+```
 
 ## Configuration
 
 The following snippet shows the full YAML configuration of an Application Service appearing in the teleport.yaml configuration file:
 
-yaml
+```yaml
 app_service:
   enabled: yes
   apps:
@@ -28,7 +28,7 @@ app_service:
     uri: "http://localhost:3000"
     public_addr: "grafana.teleport.example.com".  # (optional)
     insecure_skip_verify: false  # (optional) don't very certificate
-
+```
 
 ## Usage
 
@@ -41,12 +41,12 @@ To access a configured application in the Teleport UI, you can either:
 
 List the available applications:
 
-sh
+```sh
 tsh apps ls
-
+```
 
 Retrieves short-lived X.509 certificate for CLI application access.
 
-sh
+```sh
 tsh apps login grafana
-
+```

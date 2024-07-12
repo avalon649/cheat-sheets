@@ -12,13 +12,13 @@ TODO: WIP
 
 You can install Traefik via [Helm](tools/helm.md).
 
-sh
+```sh
 helm repo add traefik https://traefik.github.io/charts
 
 helm repo update
 
 helm install traefik traefik/traefik
-
+```
 
 
 ---
@@ -31,7 +31,7 @@ WIP
 
 ### HTTP Redirection
 WIP
-yaml
+```yaml
 entryPoints:
   web:
     address: :80
@@ -40,15 +40,15 @@ entryPoints:
         entryPoint:
           to: websecure
           scheme: https
-
+```
 
 ### HTTPS 
 WIP
-yaml
+```yaml
 entryPoints:
   websecure:
     address: :443
-
+```
 
 
 ---
@@ -72,7 +72,7 @@ Specifies the Certificate Resolver on the Router.
 ### PathPrefix and StripPrefix
 WIP
 
-yml
+```yml
 - "traefik.enable=true"
 - "traefik.http.routers.nginx-test.entrypoints=websecure"
 - "traefik.http.routers.nginx-test.tls=true"
@@ -93,7 +93,7 @@ yml
 
 # Middleware
 - "traefik.http.middlewares.add-api.addPrefix.prefix=/api"
-
+```
 
 ---
 ## CertificatesResolvers
@@ -102,7 +102,7 @@ WIP
 ### dnsChallenge
 DNS Providers such as cloudflare, digitalocean, civo, and more. To get a full list of supported providers, look up the [Traefik ACME Documentation](https://doc.traefik.io/traefik/https/acme/) .
 
-yaml
+```yaml
 certificatesResolvers:
   yourresolver:
     acme:
@@ -111,40 +111,40 @@ certificatesResolvers:
         provider: your-dns-provider
         resolvers:
           - "your-dns-resolver-ip-addr:53"
-
+```
 
 ---
 ## ServersTransport
 
 ### InsecureSkipVerify
 If you want to skip the TLS verification from **Traefik** to your **Servers**, you can add the following section to your traefik.yml config file.
-yaml
+```yaml
 serversTransport:
   insecureSkipVerify: true
-
+```
 
 ---
 ## TLS Settings
 Define TLS Settings in Traefik.
 
 ### defaultCertificates
-yaml
+```yaml
 tls:
   stores:
     default:
       defaultCertificate:
         certFile: /your-traefik-cert.crt
         keyFile: /your-traefik-key.key
-
+```
 
 ### options
 Define TLS Options like disabling insecure TLS1.0 and TLS 1.1.
-yaml
+```yaml
 tls:
   options:
     default:
       minVersion: VersionTLS12
-
+```
 
 ---
 ## Providers
@@ -152,19 +152,19 @@ WIP
 
 ### File
 WIP
-yaml
+```yaml
 providers:
   file:
-
+```
 
 ### Docker
 With exposedByDefault: false, Traefik won't automatically expose any containers by default. Setting traefik.enable: true, will expose the Container.
 
-yaml
+```yaml
 providers:
   docker:
     exposedByDefault: false
-
+```
 
 ### Kubernetes
 WIP
@@ -177,18 +177,18 @@ WIP
 ## Log
 WIP
 
-yaml
+```yaml
 log:
   level: ERROR
-
+```
 
 ---
 ## Global
 WIP
 
-yaml
+```yaml
 global:
   checkNewVersion: true
   sendAnonymousUsage: false
-
+```
 
