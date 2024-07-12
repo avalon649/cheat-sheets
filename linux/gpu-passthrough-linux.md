@@ -61,7 +61,7 @@ sudo nano /etc/docker/daemon.json
 
 Replace with:
 
-json
+```json
 {
   "default-runtime": "nvidia",
   "runtimes": {
@@ -71,7 +71,7 @@ json
     }
   }
 }
-
+```
 
 Install one more util for nvidia:
 
