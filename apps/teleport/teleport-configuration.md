@@ -1,6 +1,6 @@
 # Teleport Configuration
 
-In order to avoid breaking existing configurations, Teleport's configuration is versioned. The newer configuration version is v3. If a version is not specified in the configuration file, v1 is assumed.
+In order to avoid breaking existing configurations, Teleport's configuration is versioned. The newer configuration version is `v3`. If a `version` is not specified in the configuration file, `v1` is assumed.
 
 ## Instance-wide settings
 

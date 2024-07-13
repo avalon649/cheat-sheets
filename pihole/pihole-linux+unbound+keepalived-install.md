@@ -1,18 +1,18 @@
-Pihole One-Step Automated Install
-bash
+`Pihole One-Step Automated Install`
+```bash
 curl -sSL https://install.pi-hole.net | bash
+```
 
+`Unbound-Installation`
 
-Unbound-Installation
-
-bash
+```bash
 sudo apt update
 sudo apt install unbound -y
+```
 
+`/etc/unbound/unbound.conf.d/pi-hole.conf:`
 
-/etc/unbound/unbound.conf.d/pi-hole.conf:
-
-
+```
 server:
     # If no logfile is specified, syslog is used
     # logfile: "/var/log/unbound/unbound.log"
@@ -79,21 +79,21 @@ server:
     private-address: 10.0.0.0/8
     private-address: fd00::/8
     private-address: fe80::/10
+```
 
+`Keepalived Installation`
 
-Keepalived Installation
-
-bash
+```bash
 sudo apt update
 sudo apt install keepalived -y
 sudo apt install libipset13
+```
 
-
-bash
+```bash
 sudo nano /etc/keepalived/keepalived.conf
+```
 
-
-
+```
 First node
 
 vrrp_instance VI_1 {
@@ -139,19 +139,20 @@ vrrp_instance VI_1 {
     192.168.30.100/24
   }
 }
+```
 
-
-bash
+```bash
 sudo systemctl enable --now keepalived.service
 
 sudo systemctl stop keepalived.service
 
 sudo systemctl status keepalived.service
 
+```
 
 
+`Gravity-Sync Installation Script`
 
-Gravity-Sync Installation Script
-
-bash
+```bash
 curl -sSL https://gravity.vmstan.com | bash
+```

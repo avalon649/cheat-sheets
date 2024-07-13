@@ -3,7 +3,7 @@
 ... TBD
 
 ## TLS Version and Ciphers
-Scanning for TLS Version and supported Ciphers: nmap --script ssl-enum-ciphers <target>
+Scanning for TLS Version and supported Ciphers: `nmap --script ssl-enum-ciphers <target>`
 
 Tool | Link | Description
 ---|---|---

@@ -7,14 +7,14 @@ PowerShell was made open-source and cross-platform with PowerShell Core, and can
 ### Windows
 1. Download MSI Package from the [Official PowerShell Docs](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.2)
 2. Set up PowerShell Profile in [Windows Terminal](windows/windows-terminal.md).
-json
+```json
 "commandline": "pwsh.exe -nologo",
 "name": "Powershell",
 "source": "Windows.Terminal.PowershellCore"
-
+```
 
 ### Linux (Ubuntu)
-sh
+```sh
 # Update the list of packages
 sudo apt-get update
 # Install pre-requisite packages.
@@ -29,13 +29,13 @@ sudo apt-get update
 sudo apt-get install -y powershell
 # Start PowerShell
 pwsh
-
+```
 
 ## Profile
 Set up a PowerShell Profile by opening the profile script :
-powershell
+```powershell
 code $PROFILE
-
+```
 
 ## (Optional) Set up starship Prompt
 You can customize the look and feel of PowerShell with the Starship Prompt ([[starship]]).

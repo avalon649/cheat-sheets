@@ -12,10 +12,10 @@ Plugins: https://developer.hashicorp.com/packer/plugins
 
 ### macOS
 
-sh
+```sh
 brew tap hashicorp/tap
 brew install hashicorp/tap/packer
-
+```
 
 
 ### Windows
@@ -27,13 +27,13 @@ https://developer.hashicorp.com/packer/downloads
 
 #### Ubuntu/Debian
 
-sh
+```sh
 wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
 
 echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
 
 sudo apt update && sudo apt install packer
-
+```
 
 
 ---
@@ -50,13 +50,13 @@ The [Proxmox](infra/proxmox.md) Packer builder is able to create virtual machine
 
 TODO: WIP
 
-You can also use the [environment variables](linux/environment-variables-in-linux.md) PROXMOX_URL, PROXMOX_USERNAME, PROXMOX_PASSWORD, and PROXMOX_TOKEN to authenticate to [Proxmox](infra/proxmox.md).
+You can also use the [environment variables](linux/environment-variables-in-linux.md) `PROXMOX_URL`, `PROXMOX_USERNAME`, `PROXMOX_PASSWORD`, and `PROXMOX_TOKEN` to authenticate to [Proxmox](infra/proxmox.md).
 
 #### Template
 
-hcl
+```hcl
 
 WIP: TODO
 
-
+```
 

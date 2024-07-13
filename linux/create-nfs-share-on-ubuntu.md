@@ -1,6 +1,6 @@
 ### Install and Configure NFS Server on Ubuntu:
 
-Open a command line terminal and install NFS server.
+Source `chatgpt`
 
 ```bash
 sudo apt-get update
@@ -16,9 +16,7 @@ sudo mkdir /mnt/nfs_share
 Edit the NFS server configuration file at "/etc/exports" to specify the directory to be shared and the clients that are allowed to access it. For example, to allow access to all clients on the network, add the following line to the end of the file:
 
 ```bash
-/mnt/nfs_share *(ro,sync,subtree_check)
-/mnt/nfs_share *.hostname.com(rw,sync,no_subtree_check)
-/mnt/nfs_share *(rw,async,no_subtree_check,no_root_squash)
+/mnt/nfs_share *(rw,sync,no_subtree_check)
 ```
 
 This configuration allows read and write access to the shared directory, and synchronizes file changes between the NFS server and clients.

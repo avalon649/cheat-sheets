@@ -9,7 +9,7 @@ Website: [https://pve.proxmox.com](https://pve.proxmox.com)
 
 ## VM Management
 
-shell
+```shell
 # list VMs
 qm list
 
@@ -84,11 +84,11 @@ update VM 592: -scsi2 /dev/disk/by-id/ata-ST3000DM001-1CH166_Z1F41BLC
 # Attach hardisk to VM
 qm set <vmid> [OPTIONS]
 qm set 200 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-200-disk-1
-
+```
 
 ### Cloudinit
 
-shell
+```shell
 # Get automatically generated cloudinit config.
 qm cloudinit dump <vmid> [OPTIONS] your-vm-type
 
@@ -97,11 +97,11 @@ qm cloudinit pending <vmid> [OPTIONS]
 
 # Regenerate and change cloudinit config drive.
 qm cloudinit update <vmid> [OPTIONS]
-
+```
 
 ### Disk
 
-shell
+```shell
 # Import an external disk image as an unused disk in a VM.
 # The image format has to be supported by qemu-img(1).
 qm disk import <vmid> [OPTIONS] your-target-source your-target-storage
@@ -120,11 +120,11 @@ qm disk unlink <vmid> [OPTIONS] --idlist <string> [OPTIONS]
 
 # rescan volumes
 qm rescan
-
+```
 
 ### Snapshot
 
-shell
+```shell
 # List all snapshots.
 qm listsnapshot <vmid> [OPTIONS]
 
@@ -143,11 +143,11 @@ qm terminal <vmid> [OPTIONS] [OPTIONS]
 
 # Proxy VM VNC traffic to stdin/stdout
 qm vncproxy <vmid> [OPTIONS]
-
+```
 
 ### Misc
 
-shell
+```shell
 # Execute Qemu Guest Agent commands.
 qm guest cmd <vmid> [OPTIONS] <command>
 
@@ -159,11 +159,11 @@ qm guest exec-status <vmid> [OPTIONS] <pid>
 
 # Sets the password for the given user to the given password
 qm guest passwd <vmid> [OPTIONS] <username> [OPTIONS]
-
+```
 
 ### PV, VG, LV Management
 
-shell
+```shell
 # Create a PV
 pvcreate <disk-device-name>
 
@@ -190,11 +190,11 @@ lvremove <vg-name>/<lv-name>
 
 # List all LVs
 lvs
-
+```
 
 ### Storage Management
 
-shell
+```shell
 # Create a new storage.
 pvesm add <type> <storage> [OPTIONS]
 
@@ -224,11 +224,11 @@ pvesm scan lvmthin <vg>
 
 # Get status for all datastores.
 pvesm status [OPTIONS]
-
+```
 
 ### Template Management
 
-shell
+```shell
 # list all templates
 pveam available
 
@@ -243,7 +243,7 @@ pveam remove <template-path>
 
 # Update Container Template Database.
 pveam update
-
+```
 
 ## Certificate Management
 
@@ -251,7 +251,7 @@ See the [Proxmox Certificate Management](proxmox-certificate-management.md) chea
 
 ## Container Management
 
-shell
+```shell
 # List containers
 pct list
 
@@ -310,11 +310,11 @@ pct template <vmid> [OPTIONS]
 
 # Unlock the VM.
 pct unlock <vmid> [OPTIONS]
-
+```
 
 ### Container Disks
 
-shell
+```shell
 # Get the container?s current disk usage.
 pct df <vmid> [OPTIONS]
 
@@ -358,11 +358,11 @@ pct pull <vmid> [OPTIONS] <path> <destination> [OPTIONS]
 
 # Copy a local file to the container.
 pct push <vmid> [OPTIONS] <file> <destination> [OPTIONS]
-
+```
 
 ### Container Snapshot
 
-shell
+```shell
 # Snapshot a container.
 pct snapshot <vmid> [OPTIONS] <snapname> [OPTIONS]
 
@@ -374,14 +374,14 @@ pct rollback <vmid> [OPTIONS] <snapname> [OPTIONS]
 
 # Delete a LXC snapshot.
 pct delsnapshot <vmid> [OPTIONS] <snapname> [OPTIONS]
-
+```
 
 ## Web GUI
 
-shell
+```shell
 # Restart web GUI
 service pveproxy restart
-
+```
 
 ## Resize Disk
 
@@ -389,17 +389,17 @@ service pveproxy restart
 
 Increase disk size in the GUI or with the following command
 
-shell
+```shell
 qm resize 100 virtio0 +5G
-
+```
 
 ### Decrease disk size
 
 > Before decreasing disk sizes in Proxmox, you should take a backup!
 
-1. Convert qcow2 to raw: qemu-img convert vm-100.qcow2 vm-100.raw
-2. Shrink the disk qemu-img resize -f raw vm-100.raw 10G
-3. Convert back to qcow2 qemu-img convert -p -O qcow2 vm-100.raw vm-100.qcow2
+1. Convert qcow2 to raw: `qemu-img convert vm-100.qcow2 vm-100.raw`
+2. Shrink the disk `qemu-img resize -f raw vm-100.raw 10G`
+3. Convert back to qcow2 `qemu-img convert -p -O qcow2 vm-100.raw vm-100.qcow2`
 
 ## Further information
 

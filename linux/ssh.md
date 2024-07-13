@@ -1,8 +1,7 @@
 ### Generate key
 
 ```bash
-ssh-keygen -t ecdsa -b 521
-ssh-keygen -t rsa -b 4096 -f test.rsa
+ssh-keygen
 ```
 
 ### Import public ssh key

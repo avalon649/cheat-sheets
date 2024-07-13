@@ -1,6 +1,6 @@
 # DNS
 
-DNS (Domain Name System) is a hierarchical distributed naming system used to translate human-readable domain names, such as www.example.com, into [[IP]] (Internet Protocol) addresses, such as 192.0.2.1, that computers use to identify each other on the Internet. DNS allows users to access websites and other Internet resources using easy-to-remember domain names instead of having to remember the numerical IP addresses that correspond to them.
+DNS (Domain Name System) is a hierarchical distributed naming system used to translate human-readable domain names, such as `www.example.com`, into [[IP]] (Internet Protocol) addresses, such as 192.0.2.1, that computers use to identify each other on the Internet. DNS allows users to access websites and other Internet resources using easy-to-remember domain names instead of having to remember the numerical IP addresses that correspond to them.
 
 ## How DNS works
 
@@ -36,7 +36,7 @@ DNS over HTTPS, or DoH, is an alternative to DoT. With DoH, DNS queries and resp
 
 Like DoT, DoH ensures that attackers can't forge or alter DNS traffic. DoH traffic looks like other HTTPS traffic – e.g. normal user-driven interactions with websites and web apps – from a network administrator's perspective.
 
-txt
+```txt
   ┌─────────────────┐ ──┐
   │ 爵 HTTP Protocol │   │  encrypted
   ├─────────────────┤   ├── traffic
@@ -50,13 +50,13 @@ txt
 
   GET/POST
   url/dns-request?dns-...
-
+```
 
 ### DNS over TLS
 
 DNS over TLS, or DoT, is a standard for encrypting DNS queries to keep them secure and private. DoT uses the same security protocol, TLS, that HTTPS websites use to encrypt and authenticate communications. (TLS is also known as "SSL.") DoT adds TLS encryption on top of the user datagram protocol (UDP), which is used for DNS queries.
 
-txt
+```txt
   ┌─────────────────┐ ──┐
   │   DNS Protocol  │   │  encrypted
   ├─────────────────┤   ├── traffic
@@ -67,4 +67,4 @@ txt
   ├─────────────────┤
   │   IP Protocol   │
   └─────────────────┘
-
+```

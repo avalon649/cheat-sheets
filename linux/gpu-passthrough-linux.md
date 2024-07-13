@@ -2,9 +2,9 @@
 
 Shut down your VM in proxmox, edit your conf file, it should be here (note, change path to your VM's ID)
 
-/etc/pve/qemu-server/100.conf
+`/etc/pve/qemu-server/100.conf`
 
-add cpu: host,hidden=1,flags=+pcid to that file
+add `cpu: host,hidden=1,flags=+pcid` to that file
 
 start the server.
 
@@ -25,7 +25,7 @@ apt install nvidia-headless-470-server nvidia-utils-470-server libnvidia-encode-
 
 Then reboot.
 
-Then install nvtop
+Then install `nvtop`
 
 ```bash
 sudo apt-get install nvtop
@@ -53,7 +53,7 @@ sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
 sudo apt-get install nvidia-container-runtime
 ```
 
-update daemon.json
+update `daemon.json`
 
 ```bash
 sudo nano /etc/docker/daemon.json
@@ -81,7 +81,7 @@ sudo apt-get install -y nvidia-docker2
 
 Reboot
 
-Then, using kubectl on your kubernetes / rancher host
+Then, using `kubectl` on your kubernetes / rancher host
 
 ```bash
 kubectl create -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/master/nvidia-device-plugin.yml

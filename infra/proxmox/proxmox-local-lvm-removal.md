@@ -2,17 +2,18 @@
 
 * Delete local:lvm from Web Gui
 
-datacenter - storage
+`datacenter - storage`
 
 * On Proxmox Terminal
 
-bash
+```bash
 lvremove /dev/pve/data
+```
 
-
-bash
+```bash
 lvresize -l +100%FREE /dev/pve/root
+```
 
-
-bash
+```bash
 resize2fs /dev/mapper/pve-root
+```

@@ -1,29 +1,29 @@
 
 
-bash
+```bash
 apt-get update
 apt-get upgrade
 
 sudo apt-get install qemu-guest-agent 
 
 sudo apt-get install build-essential 
+```
 
-
-bash
+```bash
 apt install --no-install-recommends nvidia-cuda-toolkit nvidia-headless-530 nvidia-utils-530 libnvidia-encode-530
-
+```
 
 1. Reboot.
 
 2. Then install nvtop
 
-bash
+```bash
 apt-get install nvtop
-
+```
 
 ### Setting up NVIDIA Container Toolkit
 
-bash
+```bash
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 
 curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | apt-key add -
@@ -34,16 +34,16 @@ apt-get update && apt-get install -y nvidia-container-toolkit
 
 apt-get install nvidia-container-runtime
 
-
+```
  
-## update daemon.json
+## update `daemon.json`
 
-bash
+```bash
 nano /etc/docker/daemon.json
-
+```
 ## replace with
 
-bash
+```bash
 {
   "default-runtime": "nvidia",
   "runtimes": {
@@ -54,18 +54,18 @@ bash
   }
 }
 
+```
 
-
-bash
+```bash
 apt-get install -y nvidia-docker2
+```
 
-
-bash
+```bash
 systemctl restart docker
+```
 
-
-bash
+```bash
 docker run --rm --gpus all nvidia/cuda:11.0.3-base-ubuntu20.04 nvidia-smi
-
+```
 
 

@@ -6,8 +6,8 @@ Project Homepage: [Rancher Homepage](https://www.rancher.com)
 ---
 ## Remove Installation
 
-
+```
 kubectl delete validatingwebhookconfiguration rancher.cattle.io
 kubectl delete mutatingwebhookconfiguration rancher.cattle.io
-
+```
 

@@ -10,7 +10,7 @@
   
 ## Configuration
 
-Copy the GPT-4 API key into the file /etc/teleport/openai_key, and set read-only permissions and change the file owner to the user that the Teleport Proxy Service uses by running the following commands:
+Copy the GPT-4 API key into the file `/etc/teleport/openai_key`, and set read-only permissions and change the file owner to the user that the Teleport Proxy Service uses by running the following commands:
 
 ```sh
 chmod 400 /etc/teleport/openai_key
@@ -39,7 +39,7 @@ proxy_service:
 
 Restart Teleport for the changes to take effect.
 
-Make sure that your Teleport user has the assistant permission. By default, users with built-in access and editor roles have this permission. You can also add it to a custom role. Here is an example:
+Make sure that your Teleport user has the `assistant` permission. By default, users with built-in `access` and `editor` roles have this permission. You can also add it to a custom role. Here is an example:
 
 ```yaml
 kind: role

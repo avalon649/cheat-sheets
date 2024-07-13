@@ -4,15 +4,15 @@
 ---
 ## PowerShell
 ### Install Windows Update
-powershell
+```powershell
 Install-Module -Name PSWindowsUpdate
-
+```
 ### List all Commands
-powershell
+```powershell
 Get-Command -module PSWindowsUpdate
+```
 
-
-powershell
+```powershell
 Get-WUInstall
-
+```
 

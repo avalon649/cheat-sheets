@@ -1,8 +1,8 @@
 ### Add existing directory storage to proxmox without wiping it first
 
-So first, I started with getting idea of what the current disk setup looks like with lsblk.
+So first, I started with getting idea of what the current disk setup looks like with `lsblk.`
 
-
+```
 > lsblk
 NAME               MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
 sda                  8:0    0 931.5G  0 disk
@@ -19,11 +19,11 @@ sdb                  8:16   0 465.8G  0 disk
 └─sdb1               8:17   0 465.8G  0 part
 nvme0n1            259:0    0 476.9G  0 disk
 └─nvme0n1p1        259:1    0 476.9G  0 part
-
+```
 
 Then, I got more details, taking particular note of the UUID of each disk.
 
-
+```
 root@proxmox:~# lsblk -fs
 NAME             FSTYPE      FSVER    LABEL UUID                                   FSAVAIL FSUSE% MOUNTPOINT
 sda1
@@ -47,12 +47,12 @@ pve-data
     └─sda
 nvme0n1p1        ext4        1.0            4106806e-0ec1-49a4-85e8-dc2337a04086    127.9G    68% 
 └─nvme0n1
+```
 
 
+Now that I've got the UUID I need, I created a mount file in ```/etc/systemd/system```
 
-Now that I've got the UUID I need, I created a mount file in /etc/systemd/system
-
-
+```
 Mount up!
 
 root@proxmox:~# cat /etc/systemd/system/mnt-pve-ssd.mount
@@ -67,11 +67,11 @@ Where=/mnt/pve/ssd
 
 [Unit]
 Description=Mount storage 'ssd' under /mnt/pve
-
+```
 
 After creating the configs for both mnt-pve-ssd.mount and mnt-pve-m2.mount, I checked to see if they were enabled.
 
-
+```
 root@proxmox:~# systemctl list-unit-files -t mount
 
 UNIT FILE                     STATE     VENDOR PRESET
@@ -89,20 +89,20 @@ sys-kernel-debug.mount        static    -
 sys-kernel-tracing.mount      static    -
 
 12 unit files listed.
-
+```
 
 Not yet! So I enabled both of my disks
 
-
+```
 root@proxmox:~# systemctl enable mnt-pve-m2.mount
 Created symlink /etc/systemd/system/multi-user.target.wants/mnt-pve-m2.mount → /etc/systemd/system/mnt-pve-m2.mount.
 root@proxmox:~# systemctl enable mnt-pve-ssd.mount
 Created symlink /etc/systemd/system/multi-user.target.wants/mnt-pve-ssd.mount → /etc/systemd/system/mnt-pve-ssd.mount.
-
+```
 
 Then I checked to see they were enabled.
 
-
+```
 root@proxmox:~# systemctl list-unit-files -t mount
 
 UNIT FILE                     STATE     VENDOR PRESET
@@ -120,18 +120,18 @@ sys-kernel-debug.mount        static    -
 sys-kernel-tracing.mount      static    -
 
 12 unit files listed.
-
+```
 
 Lookin good. I rebooted, then checked out /etc/mtab and there they were.
 
-
+```
 /dev/nvme0n1p1 /mnt/pve/m2 ext4 rw,relatime 0 0
 /dev/sdb1 /mnt/pve/ssd ext4 rw,relatime 0 0
-
+```
 
 Then I checked again with lsblk and there were my mounted disk, nice!
 
-
+```
 root@proxmox:~# lsblk
 NAME               MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
 sda                  8:0    0 931.5G  0 disk
@@ -148,6 +148,6 @@ sdb                  8:16   0 465.8G  0 disk
 └─sdb1               8:17   0 465.8G  0 part /mnt/pve/ssd
 nvme0n1            259:0    0 476.9G  0 disk
 └─nvme0n1p1        259:1    0 476.9G  0 part /mnt/pve/m2
-
+```
 
 One big caveat I wanted to mention -- if you back up your /etc/pve directory, make sure the UUID in your backup files match your current setup. Took me 3 days of battling Proxmox to realize that.

@@ -5,5 +5,5 @@ Certutil.exe is a command-line program for Windows, installed as part of Certifi
 ---
 ## WIP
 
-certutil -addstore -f "ROOT" new-root-certificate.crt
-certutil -delstore "ROOT" serial-number-hex
+`certutil -addstore -f "ROOT" new-root-certificate.crt`
+`certutil -delstore "ROOT" serial-number-hex`

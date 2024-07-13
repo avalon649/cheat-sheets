@@ -79,7 +79,7 @@ Ctrl+, | Move to the previous packet of the conversation (TCP, UDP or IP). | Ret
 
 ### Protocols - Values
 
-ether,  fddi,  ip,  arp,  rarp,  decnet,  lat, sca,  moprc,  mopdl,  tcp  and  udp
+`ether,  fddi,  ip,  arp,  rarp,  decnet,  lat, sca,  moprc,  mopdl,  tcp  and  udp`
 
 ### Common Filtering Commands
 

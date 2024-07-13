@@ -1,5 +1,3 @@
-# RNDC
-
 ```bash
 rndc dumpdb -cache
 ```
