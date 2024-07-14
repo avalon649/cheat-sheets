@@ -98,3 +98,8 @@ kubectl get namespace default --show-label
 ```bash
 cat <<EOF | kubectl apply -f -
 ```
+
+### To create the secret, use:
+```bash
+kubectl create secret generic ssh-keys --from-file=id_rsa=/path/to/.ssh/id_rsa --from-file=id_rsa.pub=/path/to/.ssh/id_rsa.pub
+```
