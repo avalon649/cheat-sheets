@@ -19,6 +19,8 @@ Run the Docker Image
 
 ```bash
 docker run --name custom-nginx -d -p 8080:80 nginx-image:latest
+
+docker run --name some-nginx -v /some/content:/usr/share/nginx/html:ro -d nginx
 ```
 
 Login to a Docker image Repo
