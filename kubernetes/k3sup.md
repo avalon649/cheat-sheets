@@ -6,7 +6,7 @@ k3sup install \
 --tls-san 10.0.25.250 \
 --cluster \
 --k3s-channel latest \
---k3s-extra-args "--disable servicelb --disable traefik" \
+--k3s-extra-args "--disable servicelb traefik" \
 --local-path $HOME/.kube/config \
 --user serveradmin \
 --merge
