@@ -1,6 +1,14 @@
 ### K3s installation with k3sup
 
 ```bash
+curl -sLS https://get.k3sup.dev | sh
+sudo install k3sup /usr/local/bin/
+
+k3sup --help
+```
+### Create Kubernetes Cluster
+
+```bash
 k3sup install \
 --ip 10.0.25.5 \
 --tls-san 10.0.25.250 \
