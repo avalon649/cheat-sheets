@@ -18,3 +18,16 @@ k3sup install \
 --local-path $HOME/.kube/config \
 --user serveradmin \
 --merge
+```
+
+### Join a Second Server
+
+```bash
+k3sup join \
+--server \
+--host $SERVER_2 \
+--user $SERVER_2_USER \
+--server-host $SERVER_1 \
+--server_user $$SERVER_1_USER \
+--k3s-channel stable \
+```
