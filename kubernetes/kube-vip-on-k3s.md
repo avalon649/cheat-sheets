@@ -52,7 +52,7 @@ kube-vip manifest daemonset \
     --leaderElection
 ```
 
-### Example ARP Manifes
+### Example ARP Manifest
 
 ```yaml
 apiVersion: apps/v1
