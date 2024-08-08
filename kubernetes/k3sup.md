@@ -28,6 +28,6 @@ k3sup join \
 --host $SERVER_2 \
 --user $SERVER_2_USER \
 --server-host $SERVER_1 \
---server_user $SERVER_1_USER \
+--server-user $SERVER_1_USER \
 --k3s-channel stable 
 ```
