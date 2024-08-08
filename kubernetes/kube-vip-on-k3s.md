@@ -12,19 +12,19 @@ curl https://kube-vip.io/manifests/rbac.yaml > /var/lib/rancher/k3s/server/manif
 ```
 ### Generate a kube-vip DaemonSet Manifes
 
-`Set the VIP address to be used for the control plane:`
+Set the VIP address to be used for the control plane:
 
 ```bash
 export VIP=192.168.0.40
 ```
 
-`Set the INTERFACE name to the name of the interface on the control plane(s) which will announce the VIP. In many Linux distributions this can be found with the ip a command.`
+Set the INTERFACE name to the name of the interface on the control plane(s) which will announce the VIP. In many Linux distributions this can be found with the ip a command.
 
 ```bash
 export INTERFACE=eth0
 ```
 
-`Get the latest version of the kube-vip release by parsing the GitHub API. This step requires that jq and curl are installed.`
+Get the latest version of the kube-vip release by parsing the GitHub API. This step requires that jq and curl are installed.
 
 ```bash
 KVVERSION=$(curl -sL https://api.github.com/repos/kube-vip/kube-vip/releases | jq -r ".[0].name")
@@ -32,7 +32,7 @@ KVVERSION=$(curl -sL https://api.github.com/repos/kube-vip/kube-vip/releases | j
 
 ### Creating the manifest
 
-`For containerd, run the below command:`
+For containerd, run the below command:
 
 ```bash
 alias kube-vip="ctr image pull ghcr.io/kube-vip/kube-vip:$KVVERSION; ctr run --rm --net-host ghcr.io/kube-vip/kube-vip:$KVVERSION vip /kube-vip"
