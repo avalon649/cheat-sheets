@@ -58,5 +58,5 @@ Variable | Description
 ## Pass Environmental Variable Path in PowerShell
 
 ```powershell
-$env:PATH="$env:PATH;C:\Program Files\Sublime Text
+$env:PATH="$env:PATH;C:\Program Files\Sublime Text"
 ```
