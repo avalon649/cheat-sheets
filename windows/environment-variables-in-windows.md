@@ -53,3 +53,10 @@ Variable | Description
 `%NUMBER_OF_PROCESSORS%`|Outputs the number of physical and virtual cores.
 `%RANDOM%`|Outputs random number from 0 through 32767.
 `%OS%`|Windows_NT
+
+
+## Pass Environmental Variable Path in PowerShell
+
+```powershell
+$env:PATH="$env:PATH;C:\Program Files\Sublime Text
+```
