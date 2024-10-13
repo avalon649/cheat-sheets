@@ -29,11 +29,11 @@ ping -t example.com
 
 tracert example.com
 
+Test-NetConnection -ComputerName 192.168.0.6 -InformationLevel "Detailed" -Port 3389
+
 netstat -af -o
 
 route -p
-
-Test-NetConnection -ComputerName 192.168.0.6 -InformationLevel "Detailed" -Port 3389
 
 route add ip.address mask subnet-mask gateway
 ```
