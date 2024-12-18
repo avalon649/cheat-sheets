@@ -25,4 +25,6 @@ New-NetFireWallRule -DisplayName 'WSL firewall unlock' -Direction Inbound -Local
 
 and with the WSL firewall rules in place you should be able to run the following to make a port proxy
 
+```bash
 netsh interface portproxy add v4tov4 listenport=11434 listenaddress=0.0.0.0 connectport=11434 connectaddress=170.20.138.60
+```
