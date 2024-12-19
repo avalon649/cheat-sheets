@@ -78,8 +78,8 @@
     * The second digit applies to the group (g).
     * The third digit applies to the world (other users) (o).
 
-| Octal digit | Permission(s) | granted	| Symbolic |
-|--------------|--------------|----------|----------|
+| Octal digit | Permission(s) granted | Symbolic |
+|--------------|--------------|----------|
 | 0	| None | [u/g/o]-rwx |
 | 1	| Execute permission only | [u/g/o]=x | 
 | 2	| Write permission only | [u/g/o]=w |
