@@ -1,58 +1,90 @@
-### Using Chmod Command to Change File Permissions 
+## Permissions in symbolic notation
 
-As all Linux users, you will at some point need to modify the permission settings of a file/directory. The command that executes such tasks is the chmod command.
+`The permissions on files and directories span four scopes:`
 
-#### The basic syntax is:
+| Scope	| Symbol | Description |
+| --- | --- | --- |
+| User	| u	| The owner of the file or directory |
+| Group	| g	| The group of users to who can access the file or directory |
+| Other	| o	| Other users (world) |
+| All	| a	| All users (world) |
+| User	| u	| The owner of the file or directory |
+| Group	| g	|The group of users to who can access the file or directory |
+| Other	| o	| Other users (world) |
+| All	| a	| All users |
 
-`chmod [permission] [file_name]`
+## File Permissions
 
-#### There are two ways to define permission:
+| Permission type | Symbol	| If a file has this permission, you can: |	If a directory has this permission, you can: |
+| --- | --- | --- | --- |
+| Read	| r	| Open and view file contents (cat, head, tail)	Read directory contents (ls, du) |
+| Write	| w	| Edit, delete or rename file (vi)	Edit, delete or rename directory and files within it; create files within it (touch) |
+| Execute | x | Execute the file	Enter the directory (cd); without x, the directory’s r and w permissions are useless |
+| None	| -	| Do nothing |	Do nothing |
 
-*  using symbols (alphanumerical characters)
-*  using the octal notation method
+## Permission-Related Commands
 
-#### Define File Permission with Symbolic Mode
+| Command | Description |
+| --- | --- |
+| chmod permission foo	| Change the permissions of a file or directory foo according to a permission in symbolic or octal notation format. Examples: |
+| chmod +x foo | Grant execute permissions to all users to foo using symbolic notation. |
+| chmod 777 foo | Grant read, write and execute permissions to all users to foo using octal notation. |
+| chown user2 foo |	Change the owner of foo to user2. |
+| chgrp group2 foo | Change the group to which foo belongs to group2. |
+| umask	| Get a four-digit subtrahend. Recall in subtraction: minuend – subtrahend = difference If the minuend is 777, the difference is your default directory permissions; if it’s 666, the difference is your default file permissions. |
+| su / sudo / sudo -i | Invoke superuser privileges. |
+| id | Find your user id and group id. |
+| groups | Find all groups to which you belong. |
 
-To specify permission settings using alphanumerical characters, you’ll need to define accessibility for the user/owner (u), group (g), and others (o).
+`If you run a command beyond the permissions granted, you get errors such as “Permission denied” or “Operation not permitted”.`
 
-Type the initial letter for each class, followed by the equal sign (=) and the first letter of the read (r), write (w) and/or execute (x) privileges.
+## Changing Permissions
 
-To set a file, so it is public for reading, writing, and executing, the command is:
+`There are two methods to represent permissions on the command line. The first argument of the chmod command admits both representations.`
 
-`chmod u=rwx,g=rwx,o=rwx [file_name]`
+| Method | Format of permission	| Examples | Non-chmod application |
+| --- | --- | --- | --- |
+| Symbolic notation	| A short text string consisting of one character of [u/g/o/a], one of the assignment symbols [+/-/=] and at least one of [r/w/x]. If you omit u/g/o/a, the default is a. | u+rg-wxo=rx+x (i.e., a+x) | ls -l and ls -ld command outputs, e.g. -rwxrw-r--x Here, - denotes the absence, not the removal, of a permission. |
+| Octal notation | three-digit octal number ranging from 000 to 777	| 774 640 | Computing default permissions with umask |
 
-To set permission as in the previously mentioned test.txt to be:
-* read and write for the user
-* read for the members of the group
-* read for other users
+### Symbolic Notation
 
-#### Use the following command:
+`This notation is used in the ls -l and ls -ld command outputs, and it uses a combination of u/g/o/a (denoting the scope ), +/-/=, and r/w/x to change permissions. If you omit u/g/o/a, the default is a.`
 
-`chmod u=rw,g=r,o=r test.txt`
+`The notation +/-/= refers to granting/removing/setting various permissions.`
 
-Note: There is no space between the categories; we only use commas to separate them.
-Define File Permission in Octal/Numeric Mode
+`Here are some examples of chmod usage with symbolic notation. You may change more than one permission at a time, joining symbolic notations with a comma (,) as shown in the fourth example below.`
 
-Another way to specify permission is by using the octal/numeric format. This option is faster, as it requires less typing, although it is not as straightforward as the previous method.
+| Command in symbolic notation | Change in user (u) permissions	| Change in group (g) permissions	| Change in world (o) permissions |
+| --- | --- | --- | --- |
+| chmod +x foo  | ✓ Execute |✓ Execute | ✓ Execute |
+|               |           |           |           |
+| chmod a=x foo	| ☐ Read   | ☐ Read    | ☐ Read   |
+|               | ☐ Write  | ☐ Write   | ☐ Write  |
+|               | ✓ Execute | ✓ Execute | ✓ Execute |
+|               |           |            |           |
+| chmod u-w foo	| ☐ Write |(No change) | (No change) |
+|                |            |            |           |   
+| chmod u+wx,g-x,o=rx foo |	✓ Write |  ☐ Execute  | ✓ Read |
+|                         | ✓ Execute |            | ☐ Write |
+|                         |           |            | ✓ Execute |
+----------------------------------------------------------------
 
-#### Instead of letters, the octal format represents privileges with numbers:
+### Octal Notation
 
-    r(ead) has the value of 4
-    w(rite) has the value of 2
-    (e)x(ecute) has the value of 1
-    no permission has the value of 0
+`This notation is a three-digit number, in which each digit represents permissions as the sum of four addends 4, 2, and 1 corresponding to the read (r), write (w) and execute (x) permissions respectively.`
 
-#### The privileges are summed up and depicted by one number. Therefore, the possibilities are:
+    * The first digit applies to the user (owner) (u).
+    * The second digit applies to the group (g).
+    * The third digit applies to the world (other users) (o).
 
-    7 – for read, write, and execute permission
-    6 – for read and write privileges
-    5 – for read and execute privileges
-    4 – for read privileges
-
-As you have to define permission for each category (user, group, owner), the command will include three (3) numbers (each representing the summation of privileges).
-
-For instance, let’s look at the test.txt file that we symbolically configured with the chmod u=rw,g=r,o=r test.txtcommand.
-
-#### The same permission settings can be defined using the octal format with the command:
-
-`chmod 644 test.txt`
+| Octal digit | Permission(s) | granted	| Symbolic |
+|--------------|--------------|----------|----------|
+| 0	| None | [u/g/o]-rwx |
+| 1	| Execute permission only | [u/g/o]=x | 
+| 2	| Write permission only | [u/g/o]=w |
+| 3	| Write and execute permissions only: 2 + 1 = 3	| [u/g/o]=wx |
+| 4	| Read permission only | [u/g/o]=r |
+| 5	| Read and execute permissions only: 4 + 1 = 5 | [u/g/o]=rx |
+| 6	| Read and write permissions only: 4 + 2 = 6 | [u/g/o]=rw |
+| 7	| All permissions: 4 + 2 + 1 = 7 | [u/g/o]=rwx |
