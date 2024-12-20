@@ -29,13 +29,25 @@ sudo systemctl restart ollama
 
 3. At this point, your ollama service should be pointed at your WSL 2 virtualized ethernet adapter and the next step is to create a port proxy in order to talk to the WSL 2 virtual machine over your network. Open a Powershell window in administrator mode. For reference, serverfault thread
 
+### Adding Firewall Rule
 ```bash
-New-NetFireWallRule -DisplayName 'WSL firewall unlock' -Direction Outbound -LocalPort 11434 -Action Allow -Protocol TCP
+New-NetFireWallRule -DisplayName 'Ollama' -Direction Outbound -LocalPort 11434 -Action Allow -Protocol TCP
 
-New-NetFireWallRule -DisplayName 'WSL firewall unlock' -Direction Inbound -LocalPort 11434 -Action Allow -Protocol TCP
+New-NetFireWallRule -DisplayName 'Ollama' -Direction Inbound -LocalPort 11434 -Action Allow -Protocol TCP
+
 ```
 
 and with the WSL firewall rules in place you should be able to run the following to make a port proxy
+
+### Removing Firewall Rule
+
+```bash
+Remove-NetFireWallRule -DisplayName 'Ollama' -Direction Outbound -LocalPort 11434 -Action Allow -Protocol TCP
+
+Remove-NetFireWallRule -DisplayName 'Ollama' -Direction Inbound -LocalPort 11434 -Action Allow -Protocol TCP
+```
+
+
 
 ```bash
 netsh interface portproxy add v4tov4 listenport=11434 listenaddress=0.0.0.0 connectport=11434 connectaddress=170.20.138.60
