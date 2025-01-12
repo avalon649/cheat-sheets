@@ -103,3 +103,8 @@ Restore the volume with a tarball archive.
 ```bash
 docker ps -aq | xargs docker stop | xargs docker rm
 ```
+### Docker List by ID and Status
+
+```bash
+docker ps -a --format "ID: {{.ID}} | Name: {{.Names}} | Status: {{.Status}}"
+```
