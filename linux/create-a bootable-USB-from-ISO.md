@@ -11,7 +11,7 @@ lsblk
 
 Find the USB device name.
 
-As you can see, it is mounted as `sdb` in our case and can thus be accessed with its full path as `/dev/sdb.` However, if you have multiple USB sticks already connected to your system, the drive you’d like to target might be “/dev/sdc,” “/dev/sdd,” etc.
+As you can see, it is mounted as `sdb` in our case and can thus be accessed with its full path as `/dev/sdb.` However, if you have multiple USB sticks already connected to your system, the drive you’d like to target might be `/dev/sdc,` `/dev/sdd,` etc.
 2. Unmount and Format the USB Device
 
 After confirming your target drive, you need to unmount it before formatting it.
