@@ -39,7 +39,9 @@ code $PROFILE
 
 ## (Optional) Set up starship Prompt
 You can customize the look and feel of PowerShell with the Starship Prompt ([[starship]]).
+-----------------------------------------------------------------------------
 
+### Powershell Commands
 
 1. System Information
 
