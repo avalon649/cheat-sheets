@@ -298,3 +298,47 @@ Get-Process | Format-List
 # Display progress bar (for long-running tasks)
 Write-Progress -PercentComplete 50 -Status "Working" -Activity "Task in progress..."
 ```
+
+12. Scripting and Control Flow
+
+```powershell
+# If statement
+if ($a -gt 10) { Write-Output "Greater than 10" } else { Write-Output "Less than or equal to 10" }
+
+# Loop (For)
+for ($i = 0; $i -lt 5; $i++) { Write-Output "Looping $i" }
+
+# While loop
+$i = 0
+while ($i -lt 5) { Write-Output "Looping $i"; $i++ }
+
+# Foreach loop
+$items = 1..5
+foreach ($item in $items) { Write-Output "Item: $item" }
+
+# Try-Catch for error handling
+try {
+    $result = 1 / 0
+} catch {
+    Write-Error "Error: $_"
+}
+```
+
+13. Remote Management
+
+```powershell
+# Enter a remote session
+Enter-PSSession -ComputerName "RemotePC"
+
+# Run a command remotely
+Invoke-Command -ComputerName "RemotePC" -ScriptBlock { Get-Process }
+
+# Exit a remote session
+Exit-PSSession
+
+# Copy a file to a remote machine
+Copy-Item "C:\path\to\file.txt" -Destination "C:\path\on\remote\machine"
+
+# Get remote session details
+Get-PSSession
+```
