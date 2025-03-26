@@ -24,18 +24,22 @@ apt-get install nvtop
 ### Setting up NVIDIA Container Toolkit
 
 ```bash
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+  && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
+    sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+    sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
 
-curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | apt-key add -
+sudo apt-get update
 
-curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | tee /etc/apt/sources.list.d/nvidia-docker.list
-
-apt-get update && apt-get install -y nvidia-container-toolkit
-
-apt-get install nvidia-container-runtime
-
+sudo apt-get install -y nvidia-container-toolkit
 ```
- 
+
+# Install Nvidia Docker 2
+
+```bash
+apt-get install -y nvidia-docker2
+```
+
 ## update `daemon.json`
 
 ```bash
@@ -56,13 +60,13 @@ nano /etc/docker/daemon.json
 
 ```
 
-```bash
-apt-get install -y nvidia-docker2
-```
+### Restart Docker
 
 ```bash
 systemctl restart docker
 ```
+
+### Run A Sample Workload
 
 ```bash
 docker run --rm --gpus all nvidia/cuda:11.0.3-base-ubuntu20.04 nvidia-smi
