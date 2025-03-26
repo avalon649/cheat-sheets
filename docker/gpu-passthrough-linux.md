@@ -34,18 +34,18 @@ sudo apt-get update
 sudo apt-get install -y nvidia-container-toolkit
 ```
 
-# Install Nvidia Docker 2
+### Install Nvidia Docker 2
 
 ```bash
 apt-get install -y nvidia-docker2
 ```
 
-## update `daemon.json`
+### update `daemon.json`
 
 ```bash
 nano /etc/docker/daemon.json
 ```
-## replace with
+### replace with
 
 ```bash
 {
