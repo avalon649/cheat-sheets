@@ -40,12 +40,13 @@ sudo apt-get install -y nvidia-container-toolkit
 apt-get install -y nvidia-docker2
 ```
 
-### update `daemon.json`
+### Update `daemon.json`
 
 ```bash
 nano /etc/docker/daemon.json
 ```
-### replace with
+
+### And Replace `daemon.json` With
 
 ```bash
 {
