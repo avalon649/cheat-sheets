@@ -25,3 +25,8 @@ lsof -p 890
 ```bash
 lsof -u admin
 ```
+#### List Open Files
+
+```bash
+lsof +D /mnt/nfs_mount_point
+```
