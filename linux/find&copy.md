@@ -5,6 +5,7 @@ Copy All .jpg Files (Flattened, No Folder Structure)
 ```bash
 find /source/dir -type f -iname '*.jpg' -exec cp '{}' /destination/dir/ \;
 ```
+```text
     -type f: Only files.
 
     -iname '*.jpg': Matches .jpg and .JPG, case-insensitively.
@@ -12,6 +13,7 @@ find /source/dir -type f -iname '*.jpg' -exec cp '{}' /destination/dir/ \;
     cp '{}' /destination/dir/: Copies to one flat folder (no structure preserved).
 
     Be careful of filename collisions (if two files have the same name).
+```
 
 Preserve Folder Structure While Copying .jpg Files
 
