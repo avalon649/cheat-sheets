@@ -31,13 +31,13 @@ sudo sysctl --system
 
 ### Step 2: Install containerd on all nodes
 
-Install containerd:
+1. Install containerd:
 
 ```bash
 sudo apt update
 sudo apt install -y containerd
 ```
-Create containerd config file and restart containerd:
+2. Create containerd config file and restart containerd:
 
 ```bash
 sudo mkdir -p /etc/containerd
