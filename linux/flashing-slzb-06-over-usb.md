@@ -2,8 +2,8 @@
 
 If your SLZB-06/06M device is not connected to LAN or you want to flash ESP32 via USB for other reasons, it can be easily done via USB cable. For this purposes you need:
 
-    A computer with Windows or Mac installed;
-    USB - Type-C cable.
+        A computer with Windows or Mac installed;
+        USB - Type-C cable.
 
 To flash via USB, follow these steps:
 
