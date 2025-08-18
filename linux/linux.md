@@ -1,7 +1,7 @@
 #                                           Essential Linux Commands
 
 ###             1. File and Directory Management
-
+```
 *   ls          --      List files and directories
 *   cd          --      Change directory
 *   pwd         --      Print working directory
@@ -18,7 +18,7 @@
 *   chown       --      Change file owner and group
 *   chgrp       --      Change group ownership
 *   stat        --      Display file or file-system status
-
+```
 ###                2. File Viewing and Editing
 
 *   `cat`           --      `Concatenate and display file content`
