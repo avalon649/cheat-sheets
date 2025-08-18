@@ -11,13 +11,13 @@
 *   mkdir       --      Create a directory
 *   rmdir       --      Remove directory
 *   touch       --      Change file timestamp or create empty file
-*   find`       --      Search for files in a direcory hierachy
+*   find        --      Search for files in a direcory hierachy
 *   locat       --      Find files by name
-*   tree`       --      Display direcories ina tree-like format
+*   tree        --      Display direcories ina tree-like format
 *   chmod       --      Change file permissions
 *   chown       --      Change file owner and group
 *   chgrp       --      Change group ownership
-*   stat`       --      Display file or file-system status
+*   stat        --      Display file or file-system status
 
 ###                2. File Viewing and Editing
 
