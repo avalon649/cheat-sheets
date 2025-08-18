@@ -2,22 +2,22 @@
 
 ###             1. File and Directory Management
 
-*   `ls`            --      List files and directories
-*   `cd`            --      Change directory
-*   `pwd`           --      Print working directory
-*   `cp`            --      Copy files and directories
-*   `mv`            --      Move or rename files and directories
-*   `rm`            --      Remove files and directories
-*   `mkdir`         --      Create a directory
-*   `rmdir`         --      Remove directory
-*   `touch`         --      Change file timestamp or create empty file
-*   `find`          --      Search for files in a direcory hierachy
-*   `locate`        --      Find files by name
-*   `tree`          --      Display direcories ina tree-like format
-*   `chmod`         --      Change file permissions
-*   `chown`         --      Change file owner and group
-*   `chgrp`         --      Change group ownership
-*   `stat`          --      Display file or file-system status
+   `ls`            --      List files and directories
+   `cd`            --      Change directory
+   `pwd`           --      Print working directory
+   `cp`            --      Copy files and directories
+   `mv`            --      Move or rename files and directories
+   `rm`            --      Remove files and directories
+   `mkdir`         --      Create a directory
+   `rmdir`         --      Remove directory
+   `touch`         --      Change file timestamp or create empty file
+   `find`          --      Search for files in a direcory hierachy
+   `locate`        --      Find files by name
+   `tree`          --      Display direcories ina tree-like format
+   `chmod`         --      Change file permissions
+   `chown`         --      Change file owner and group
+   `chgrp`         --      Change group ownership
+   `stat`          --      Display file or file-system status
 
 ###                2. File Viewing and Editing
 
