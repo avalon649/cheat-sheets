@@ -1,4 +1,4 @@
-                1. File and Directory Management
+###             1. File and Directory Management
 
 *   `ls         --      List files and directories`
 *   `cd         --      Change directory`
