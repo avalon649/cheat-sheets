@@ -17,7 +17,7 @@
 *   `chgrp      --      Change group ownership`
 *   `stat       --      Display file or file-system status`
 
-                2. File Viewing and Editing
+###                2. File Viewing and Editing
 
 *   `cat        --      Concatenate and display file content`
 *   `tac        --      Concatenate and display file content in reverse`  
@@ -34,7 +34,7 @@
 *   `cut        --      Remove sections from each line of files`
 *   `sort       --      Sort lines of text files`
 
-                3. Processs Management
+###                3. Processs Management
 
 *   `ps         --      Report a snapshot of current processes`
 *   `top        --      Display Linux tasks`
