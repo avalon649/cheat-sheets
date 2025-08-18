@@ -78,3 +78,28 @@
 *   `scp`           --      `Secure copy between hosts`
 *   `ssh`           --      `Secure shell for remote login`
 *   `ftp`           --      `File transfer protocol client`
+
+###                 4. User and Group Managmenent
+
+*   `useradd`       --      `Add a user to the system`
+*   `usermod`       --      `Modify a user account`
+*   `userdel`       --      `Remove a user from the system`
+*   `groupadd`      --      `Add a group to the system`
+*   `groupdel`      --      `Remove a group from the system`
+*   `passwd`        --      `Change a user's password`
+*   `chage`         --      `Change a user's password expiry information`
+*   `whoami`        --      `Print the current logged-in user`
+*   `who`           --      `Show who's logged in`
+*   `w`             --      `Show who's logged in and what they're doing`
+*   `id`            --      `Prints user and groupp information`
+*   `groups`        --      `List all groups`
+
+###                5. System information and Monitoring
+
+*   `uname`             --      `Prints system information`
+*   `hostame`           --      `Show or set the system's hostname`
+*   `uptime`            --      `How long the system has been running`
+*   `dmesg`             --      `Boot and system messages`
+*   `free`              --      `Prints the system's free memory`
+*   `top`               --      `Prints linux tasks`
+*   `vmstat`            --      `Report virtuall memory statistics`    
