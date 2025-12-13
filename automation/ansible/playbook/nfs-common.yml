@@ -1,0 +1,10 @@
+---
+- hosts: k-master
+
+  become: yes
+
+  tasks:
+    - name: Install nfs-common
+      apt:
+        name: nfs-common
+        update_cache: yes

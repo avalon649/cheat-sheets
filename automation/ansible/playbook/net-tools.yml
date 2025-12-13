@@ -1,0 +1,10 @@
+---
+- hosts: ubuntu
+
+  become: yes
+
+  tasks:
+    - name: Install Net-Tools
+      apt:
+        name: net-tools
+        update_cache: yes

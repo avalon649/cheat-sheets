@@ -1,0 +1,10 @@
+---
+- hosts: k-master
+
+  become: yes
+
+  tasks:
+    - name: Install Qemu Guest Agent
+      apt:
+        name: qemu-guest-agent
+        update_cache: yes
