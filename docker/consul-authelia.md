@@ -1,4 +1,4 @@
-### Traefik Service Registration
+### Traefik Service Registration For Authelia
 
 ```bash
 docker exec consul-server consul kv put traefik/http/routers/plex/entryPoints/0 "https"
