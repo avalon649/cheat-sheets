@@ -108,3 +108,7 @@ docker ps -aq | xargs docker stop | xargs docker rm
 ```bash
 docker ps -a --format "ID: {{.ID}} | Name: {{.Names}} | Status: {{.Status}}"
 ```
+
+```bash
+layer="$(docker inspect -f '{{.GraphDriver.Data.MergedDir}}' noshell)"
+```
