@@ -109,6 +109,7 @@ docker ps -aq | xargs docker stop | xargs docker rm
 docker ps -a --format "ID: {{.ID}} | Name: {{.Names}} | Status: {{.Status}}"
 ```
 
+### Search for a specific image in Docker inspect
 ```bash
 layer="$(docker inspect -f '{{.GraphDriver.Data.MergedDir}}' noshell)"
 ```
