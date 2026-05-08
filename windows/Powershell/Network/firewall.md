@@ -21,6 +21,11 @@
 
 ---
 
+## Disable all profiles at once
+```powershell
+Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
+```
+
 ## 1. Query Rules
 
 ```powershell
