@@ -1,6 +1,13 @@
 ## Useful Shortcuts
 
 ```powershell
+# Relaunch as Admin
+Start-Process powershell -Verb RunAs
+
+# Wget Equivalent
+Invoke-WebRequest -Uri "https://example.com/file.zip" -OutFile "file.zip"
+iwr -Uri "https://example.com/file.zip" -OutFile "file.zip"
+
 # Grep equivalent
 Select-String -Path .\*.log -Pattern "error"
 Get-Content file.log | Select-String "error"
