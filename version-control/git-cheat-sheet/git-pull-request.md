@@ -54,12 +54,10 @@ gh pr comment 123 -b "comment text"
 ## Merge / close
 ```bash
 gh pr merge 123 --squash --delete-branch
-gh pr merge 123 --rebase
-gh pr merge 123 --merge
-gh pr merge 123 --auto --squash           # merge when checks pass
 gh pr close 123
 gh pr reopen 123
 ```
+More `gh pr merge` options: [gh-pr-cheatsheet.md → Merge Pull Requests](../gh-pr-cheatsheet.md#merge-pull-requests)
 
 ## Clean up after merge
 ```bash
