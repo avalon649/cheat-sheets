@@ -8,11 +8,8 @@ git switch -c feat/my-change
 git add -A && git commit -m "feat: my change"
 git push -u origin feat/my-change
 gh pr create --fill                                  # title/body from commits
-gh pr create -t "Title" -b "Body" -B main -H feat/my-change
-gh pr create --draft
-gh pr create -r reviewer1,reviewer2 -a @me -l bug
-gh pr create --web                                   # open in browser
 ```
+More `gh pr create` options: [gh-pr-cheatsheet.md → Create Pull Requests](../gh-pr-cheatsheet.md#create-pull-requests)
 
 ## View / check out
 ```bash
