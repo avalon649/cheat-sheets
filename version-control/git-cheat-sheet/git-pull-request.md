@@ -14,14 +14,12 @@ More `gh pr create` options: [gh-pr-cheatsheet.md → Create Pull Requests](../g
 ## View / check out
 ```bash
 gh pr status
-gh pr view 123
-gh pr view 123 --web
 gh pr diff 123
 gh pr checks 123
 gh pr checks 123 --watch
 gh pr checkout 123                    # check out PR branch locally
 ```
-More `gh pr list` options: [gh-pr-cheatsheet.md → List Pull Requests](../gh-pr-cheatsheet.md#list-pull-requests)
+More `gh pr list` / `gh pr view` options: [gh-pr-cheatsheet.md → List Pull Requests](../gh-pr-cheatsheet.md#list-pull-requests) · [View a single PR](../gh-pr-cheatsheet.md#view-a-single-pr)
 
 ## Without gh (plain git)
 ```bash
